@@ -3,19 +3,20 @@ body {
     margin: 0;
     padding: 0;
     background-color: #f4f4f4;
+    color: #333;
 }
 
 header {
     background-color: #333;
-    color: white;
+    color: #fff;
     text-align: center;
-    padding: 1em 0;
+    padding: 2em 0;
 }
 
 nav {
-    background-color: #444;
-    padding: 0.5em 0;
+    background-color: #555;
     text-align: center;
+    padding: 1em 0;
 }
 
 nav ul {
@@ -30,15 +31,17 @@ nav ul li {
 }
 
 nav ul li a {
-    color: white;
+    color: #fff;
     text-decoration: none;
+    font-weight: bold;
 }
 
 section {
     padding: 2em;
-    margin: 1em 0;
-    background-color: white;
-    border-radius: 5px;
+    margin: 1em auto;
+    width: 80%;
+    background-color: #fff;
+    border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
@@ -47,16 +50,34 @@ section h2 {
     padding-bottom: 0.5em;
 }
 
-.project {
-    margin: 1em 0;
-}
-
 footer {
     text-align: center;
     padding: 1em 0;
     background-color: #333;
-    color: white;
+    color: #fff;
     position: fixed;
     width: 100%;
     bottom: 0;
 }
+
+.project {
+    margin: 1em 0;
+}
+
+.project h3 {
+    color: #007BFF;
+}
+
+ul {
+    list-style-type: square;
+}
+
+a {
+    color: #007BFF;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+

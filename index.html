@@ -4,71 +4,259 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bassam Nazer - Data Scientist</title>
-    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f7fa;
+            color: #2d3748;
+            line-height: 1.6;
+        }
+
+        header {
+            background: linear-gradient(135deg, #2b6cb0 0%, #3182ce 100%);
+            color: #ffffff;
+            text-align: center;
+            padding: 3em 0;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5em;
+        }
+
+        header p {
+            margin: 0.5em 0 0;
+            font-size: 1.2em;
+            opacity: 0.9;
+        }
+
+        nav {
+            background-color: #2d3748;
+            text-align: center;
+            padding: 1em 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin: 0 1.5em;
+        }
+
+        nav ul li a {
+            color: #e2e8f0;
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            color: #63b3ed;
+        }
+
+        section {
+            padding: 2.5em;
+            margin: 1.5em auto;
+            width: 85%;
+            max-width: 1200px;
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+            transition: transform 0.2s ease;
+        }
+
+        section:hover {
+            transform: translateY(-5px);
+        }
+
+        section h2 {
+            color: #2b6cb0;
+            border-bottom: 2px solid #e2e8f0;
+            padding-bottom: 0.5em;
+            margin-bottom: 1em;
+            font-size: 1.8em;
+        }
+
+        .project {
+            margin: 1.5em 0;
+            padding: 1em;
+            border-left: 4px solid #3182ce;
+        }
+
+        .project h3 {
+            color: #2d3748;
+            margin-top: 0;
+            font-size: 1.4em;
+        }
+
+        .project p {
+            margin: 0.5em 0 0;
+            color: #4a5568;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        ul li {
+            padding: 0.5em 0;
+            position: relative;
+            padding-left: 1.5em;
+        }
+
+        ul li:before {
+            content: '→';
+            position: absolute;
+            left: 0;
+            color: #3182ce;
+        }
+
+        a {
+            color: #3182ce;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        a:hover {
+            color: #2b6cb0;
+            text-decoration: underline;
+        }
+
+        footer {
+            text-align: center;
+            padding: 1.5em 0;
+            background-color: #2d3748;
+            color: #e2e8f0;
+            width: 100%;
+            margin-top: 2em;
+        }
+
+        @media (max-width: 768px) {
+            nav ul li {
+                display: block;
+                margin: 0.5em 0;
+            }
+
+            section {
+                width: 90%;
+                padding: 1.5em;
+            }
+
+            header h1 {
+                font-size: 2em;
+            }
+        }
+    </style>
 </head>
 <body>
     <header>
         <h1>Bassam Nazer</h1>
-        <p>Master's Student in Data Science</p>
+        <p>Project Associate at C-DAC Chennai | M.Tech Data Science</p>
     </header>
     <nav>
         <ul>
             <li><a href="#about">About Me</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#education">Education</a></li>
             <li><a href="#skills">Skills</a></li>
             <li><a href="#projects">Projects</a></li>
             <li><a href="#accomplishments">Accomplishments</a></li>
             <li><a href="#certifications">Certifications</a></li>
             <li><a href="#languages">Languages</a></li>
-            <li><a href="#hobbies">Hobbies</a></li>
-            <li><a href="#interests">Interests</a></li>
             <li><a href="#contact">Contact</a></li>
         </ul>
     </nav>
     <section id="about">
         <h2>About Me</h2>
-        <p>I am currently pursuing a master's degree in Data Science at the Defence Institute of Advanced Technology, Pune. My studies focus on advanced data analysis techniques, machine learning, and statistical modeling, equipping me with the skills necessary to solve complex data-driven problems and contribute to cutting-edge research in the field of data science.</p>
+        <p>A results-driven data science professional with expertise in machine learning, statistical analysis, and data-driven decision-making. Currently serving as a Project Associate at C-DAC Chennai, specializing in applied AI, data analytics, and process optimization. Passionate about transforming complex data into actionable intelligence to enhance efficiency and innovation.</p>
+    </section>
+    <section id="experience">
+        <h2>Experience</h2>
+        <div class="project">
+            <h3>Project Associate, Centre for Development of Advanced Computing (C-DAC), Chennai</h3>
+            <p><em>August 2024 - Present</em></p>
+            <ul>
+                <li>Developed a data-driven school management system in Odoo 16, leveraging PostgreSQL to optimize data storage, retrieval, and reporting for over 730 schools.</li>
+                <li>Performed exploratory data analysis (EDA) on student performance data to identify patterns and trends for academic insights.</li>
+                <li>Implemented automated data pipelines using SQL and Python to clean, preprocess, and analyze student and attendance data.</li>
+                <li>Designed real-time dashboards in Odoo for tracking student attendance and academic performance, improving reporting efficiency by 80%.</li>
+                <li>Integrated UDISE API to fetch and analyze school data from National Informatics Centre (NIC), streamlining data ingestion and validation processes.</li>
+                <li>Collaborated with cross-functional teams to design data-driven ERP solutions for academic and administrative workflows.</li>
+            </ul>
+        </div>
+    </section>
+    <section id="education">
+        <h2>Education</h2>
+        <div class="project">
+            <h3>M.Tech Data Science, Defence Institute of Advanced Technology, Pune</h3>
+            <p><em>2022 - 2024</em></p>
+        </div>
+        <div class="project">
+            <h3>B.Tech Mechanical Engineering, Government Engineering College, Wayanad</h3>
+            <p><em>2018 - 2022</em></p>
+        </div>
     </section>
     <section id="skills">
         <h2>Skills</h2>
         <ul>
-            <li>Languages: Python, SQL</li>
-            <li>Business Intelligence Tools: Tableau</li>
-            <li>Libraries: Numpy, Pandas, Scikit-learn, Keras, Tensorflow, Matplotlib, Plotly</li>
-            <li>General: Machine Learning, Deep Learning, Pattern Recognition, Data Analysis, Data Mining, Data Visualization, Statistics, Statistical Modeling, Exploratory Data Analysis</li>
-            <li>Soft Skills: Interpersonal Communication, Teamwork, Leadership, Analytical and Problem-Solving, Creativity, Flexibility, Adaptability, Reliability, Attention to Detail</li>
+            <li><strong>Languages:</strong> Python, SQL, R</li>
+            <li><strong>Business Intelligence Tools:</strong> Tableau, Power BI</li>
+            <li><strong>Libraries:</strong> NumPy, Pandas, Scikit-learn, Keras, TensorFlow, Matplotlib, Plotly, Seaborn</li>
+            <li><strong>Technologies:</strong> Odoo, PostgreSQL, UDISE API</li>
+            <li><strong>General:</strong> Machine Learning, Deep Learning, Pattern Recognition, Data Analysis, Data Mining, Data Visualization, Statistics, Statistical Modeling, Exploratory Data Analysis, Predictive Modeling, Automation</li>
+            <li><strong>Soft Skills:</strong> Interpersonal Communication, Teamwork, Leadership, Analytical Thinking, Problem-Solving, Creativity, Adaptability, Reliability, Attention to Detail</li>
         </ul>
     </section>
     <section id="projects">
         <h2>Projects</h2>
         <div class="project">
             <h3>Mitigation of Backdoor Poisoning Attacks in Deep Neural Networks</h3>
-            <p>Implemented a backdoor attack mitigation system using DBSCAN clustering to identify potential poisoned data samples containing patch triggers in the CIFAR-10 dataset. Applied heatmaps to visualize the spatial distribution of these malicious points, efficiently localizing trigger positions; implemented inpainting techniques to fill the trigger. Reduced the overall attack accuracy by 90% by re-training the model.</p>
+            <p><em>January 2024</em></p>
+            <p>Implemented a backdoor attack mitigation system using DBSCAN clustering to identify potential poisoned data samples in the CIFAR-10 dataset. Applied heatmaps to visualize malicious points, localizing trigger positions, and used inpainting techniques to mitigate triggers. Reduced attack accuracy by 90% through model re-training.</p>
         </div>
         <div class="project">
             <h3>Activity Volume Predictions in Twitter</h3>
-            <p>Developed multiple regression models, including linear regression, ridge regression, and lasso regression, for predicting the number of active discussions on Twitter. Analyzed using different metrics like R² Score, Mean Absolute Error, Root Mean Square Error, and cross-validation scores. Observed that lasso regression is the best model as its generalization was better than other models, achieving an R² Score of 0.92.</p>
+            <p><em>May 2023</em></p>
+            <p>Developed regression models (linear, ridge, lasso) to predict active discussions on Twitter. Evaluated models using R² Score, MAE, RMSE, and cross-validation. Lasso regression achieved the best generalization with an R² Score of 0.92.</p>
         </div>
         <div class="project">
             <h3>Seoul Bike Rental Prediction</h3>
-            <p>Conducted a comprehensive data regression analysis to develop a predictive model for Seoul Bike Rentals by utilizing 12 months of historical data on bike rentals, weather conditions, and timestamps to understand usage patterns. Applied XGBRegressor with 1500 gradient-boosted trees and a 0.01 learning rate. Created a model predicting the required number of bikes for rental with an R² Score of 0.91.</p>
+            <p><em>February 2023</em></p>
+            <p>Built a predictive model for Seoul Bike Rentals using 12 months of historical data. Applied XGBRegressor with 1500 gradient-boosted trees and a 0.01 learning rate, achieving an R² Score of 0.91.</p>
+        </div>
+        <div class="project">
+            <h3>Financial Consumer Complaints Data Analysis Using Tableau</h3>
+            <p><em>July 2024</em></p>
+            <p>Analyzed 75,513 consumer complaints, revealing 98.05% timely bank responses and 0.37% pending. Identified top complaint categories (credit cards: 25.36%, checking/savings: 17.79%, mortgages: 16.51%). Visualized state-wise complaints using a hex map in Tableau.</p>
         </div>
     </section>
     <section id="accomplishments">
         <h2>Accomplishments</h2>
         <ul>
-            <li>Collaborated with a cross-functional team of 15 members in organizing the Arts Festival of GEC Wayanad.</li>
-            <li>Led a team project to design and develop a solar tea dryer using phase change materials with a dryer efficiency of 89%.</li>
-            <li>Completed 4 online courses in data science on platforms like Coursera, gaining expertise in areas such as machine learning and data visualization.</li>
-            <li>Lectured on the basics of R programming to 1st year M.Tech students at DIAT Pune.</li>
+            <li>Collaborated with a 15-member team to organize the Arts Festival at GEC Wayanad.</li>
+            <li>Led a project to design a solar tea dryer using phase change materials, achieving 89% efficiency.</li>
+            <li>Completed 4 online data science courses on Coursera, specializing in machine learning and data visualization.</li>
+            <li>Lectured on R programming basics to first-year M.Tech students at DIAT Pune.</li>
         </ul>
     </section>
     <section id="certifications">
         <h2>Certifications</h2>
         <ul>
-            <li>Machine Learning Specialization by deeplearning.ai, Stanford University on Coursera</li>
-            <li>Data Science Fundamentals with Python and SQL by IBM on Coursera</li>
-            <li>Deep Learning Specialization by deeplearning.ai on Coursera</li>
-            <li>Algorithms Specialization by Stanford University on Coursera</li>
+            <li>Data Science Fundamentals with Python and SQL, IBM, September 2022</li>
+            <li>Algorithms Specialization, Stanford University, October 2022</li>
+            <li>Machine Learning Specialization, DeepLearning.AI & Stanford University, September 2022</li>
+            <li>Deep Learning Specialization, DeepLearning.AI, March 2023</li>
         </ul>
     </section>
     <section id="languages">
@@ -79,26 +267,6 @@
             <li>Hindi: Intermediate</li>
         </ul>
     </section>
-    <section id="hobbies">
-        <h2>Hobbies</h2>
-        <ul>
-            <li>Sports: Engaging in team sports such as football to demonstrate effective collaboration and teamwork skills.</li>
-            <li>Gaming: Demonstrating problem-solving skills through intricate game scenarios and challenges.</li>
-            <li>Personal Projects: Executing data analysis and machine learning projects independently to apply acquired skills effectively.</li>
-            <li>Traveling: Exploring diverse cultures and gaining a global perspective.</li>
-            <li>Coding: Enjoy solving coding challenges and exploring new approaches to problem-solving.</li>
-        </ul>
-    </section>
-    <section id="interests">
-        <h2>Interests</h2>
-        <ul>
-            <li>Machine Learning: Actively engaging with recent innovations in machine learning, continuously integrating new knowledge into my understanding.</li>
-            <li>Data Visualization: Exploring innovative ways to create visually compelling representations of data using packages like Matplotlib, Plotly, and data visualization software Tableau.</li>
-            <li>Online Courses and Certifications: Actively pursuing online courses to enhance data science skills.</li>
-            <li>Mathematics and Algorithms: Exploring and understanding the intricacies of complex algorithms and the mathematical foundations of machine learning algorithms.</li>
-            <li>Autonomous Vehicles: Eager to leverage data science to contribute to the evolution of self-driving cars.</li>
-        </ul>
-    </section>
     <section id="contact">
         <h2>Contact</h2>
         <p>Phone: +91-8075215391</p>
@@ -107,8 +275,7 @@
         <p>GitHub: <a href="https://github.com/Bassam-123">github.com/Bassam-123</a></p>
     </section>
     <footer>
-        <p>&copy; 2024 Bassam Nazer</p>
+        <p>© 2025 Bassam Nazer</p>
     </footer>
 </body>
 </html>
-

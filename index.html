@@ -2,287 +2,246 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <title>Bassam Nazer | AI Engineer & Data Scientist</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bassam Nazer - Data Scientist</title>
+
     <style>
         body {
             font-family: 'Segoe UI', Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f5f7fa;
+            background-color: #f4f6f9;
             color: #2d3748;
-            line-height: 1.6;
+            line-height: 1.7;
         }
 
         header {
-            background: linear-gradient(135deg, #2b6cb0 0%, #3182ce 100%);
-            color: #ffffff;
+            background: linear-gradient(135deg, #1e3c72, #2a5298);
+            color: white;
             text-align: center;
-            padding: 3em 0;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 3em 1em;
         }
 
         header h1 {
             margin: 0;
-            font-size: 2.5em;
+            font-size: 2.7em;
         }
 
         header p {
-            margin: 0.5em 0 0;
+            margin-top: 10px;
             font-size: 1.2em;
             opacity: 0.9;
         }
 
         nav {
-            background-color: #2d3748;
+            background: #1a202c;
             text-align: center;
             padding: 1em 0;
             position: sticky;
             top: 0;
-            z-index: 100;
         }
 
-        nav ul {
-            list-style: none;
-            margin: 0;
-            padding: 0;
-        }
-
-        nav ul li {
-            display: inline;
-            margin: 0 1.5em;
-        }
-
-        nav ul li a {
+        nav a {
             color: #e2e8f0;
             text-decoration: none;
+            margin: 0 20px;
             font-weight: 600;
-            transition: color 0.3s ease;
         }
 
-        nav ul li a:hover {
+        nav a:hover {
             color: #63b3ed;
         }
 
         section {
-            padding: 2.5em;
-            margin: 1.5em auto;
-            width: 85%;
-            max-width: 1200px;
-            background-color: #ffffff;
+            max-width: 1100px;
+            margin: 2em auto;
+            padding: 2em;
+            background: white;
             border-radius: 8px;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-            transition: transform 0.2s ease;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
         }
 
-        section:hover {
-            transform: translateY(-5px);
-        }
-
-        section h2 {
-            color: #2b6cb0;
+        h2 {
+            color: #1e3c72;
             border-bottom: 2px solid #e2e8f0;
-            padding-bottom: 0.5em;
-            margin-bottom: 1em;
-            font-size: 1.8em;
+            padding-bottom: 8px;
         }
 
-        .project {
-            margin: 1.5em 0;
-            padding: 1em;
-            border-left: 4px solid #3182ce;
-        }
-
-        .project h3 {
-            color: #2d3748;
-            margin-top: 0;
-            font-size: 1.4em;
-        }
-
-        .project p {
-            margin: 0.5em 0 0;
-            color: #4a5568;
+        .highlight {
+            border-left: 4px solid #2a5298;
+            padding-left: 1em;
+            margin: 1em 0;
         }
 
         ul {
-            list-style-type: none;
-            padding: 0;
-        }
-
-        ul li {
-            padding: 0.5em 0;
-            position: relative;
-            padding-left: 1.5em;
-        }
-
-        ul li:before {
-            content: '→';
-            position: absolute;
-            left: 0;
-            color: #3182ce;
-        }
-
-        a {
-            color: #3182ce;
-            text-decoration: none;
-            font-weight: 500;
-        }
-
-        a:hover {
-            color: #2b6cb0;
-            text-decoration: underline;
+            padding-left: 20px;
         }
 
         footer {
             text-align: center;
-            padding: 1.5em 0;
-            background-color: #2d3748;
-            color: #e2e8f0;
-            width: 100%;
-            margin-top: 2em;
+            padding: 2em;
+            background: #1a202c;
+            color: white;
         }
 
-        @media (max-width: 768px) {
-            nav ul li {
+        @media(max-width: 768px){
+            nav a {
                 display: block;
-                margin: 0.5em 0;
-            }
-
-            section {
-                width: 90%;
-                padding: 1.5em;
-            }
-
-            header h1 {
-                font-size: 2em;
+                margin: 10px 0;
             }
         }
     </style>
 </head>
+
 <body>
-    <header>
-        <h1>Bassam Nazer</h1>
-        <p>Project Associate at C-DAC Chennai | M.Tech Data Science</p>
-    </header>
-    <nav>
+
+<header>
+    <h1>Bassam Nazer</h1>
+    <p>AI Engineer | Healthcare AI | Computer Vision | Government-Scale ERP Systems</p>
+    <p>Project Associate – C-DAC Chennai | M.Tech Data Science</p>
+</header>
+
+<nav>
+    <a href="#about">About</a>
+    <a href="#experience">Experience</a>
+    <a href="#research">Research</a>
+    <a href="#projects">Projects</a>
+    <a href="#skills">Skills</a>
+    <a href="#awards">Awards</a>
+    <a href="#contact">Contact</a>
+</nav>
+
+<section id="about">
+    <h2>About Me</h2>
+    <p>
+        I am a Data Scientist and AI Engineer specializing in deep learning, computer vision, 
+        and large-scale data systems. I build end-to-end machine learning pipelines that move 
+        from research to production, delivering measurable impact in healthcare and public sector domains.
+    </p>
+
+    <p>
+        Currently working at <strong>C-DAC Chennai</strong>, I contribute to national-level AI systems 
+        including medical imaging diagnostics and government ERP infrastructure. My work combines 
+        model optimization, applied research, and scalable engineering.
+    </p>
+</section>
+
+<section id="experience">
+    <h2>Professional Experience</h2>
+
+    <div class="highlight">
+        <h3>C-DAC Chennai — Project Associate (Aug 2024 – Present)</h3>
+
+        <h4>XrayCAD – Healthcare AI System</h4>
         <ul>
-            <li><a href="#about">About Me</a></li>
-            <li><a href="#experience">Experience</a></li>
-            <li><a href="#education">Education</a></li>
-            <li><a href="#skills">Skills</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#accomplishments">Accomplishments</a></li>
-            <li><a href="#certifications">Certifications</a></li>
-            <li><a href="#languages">Languages</a></li>
-            <li><a href="#contact">Contact</a></li>
+            <li>Designed a DenseNet201-based multi-label chest X-ray classifier achieving <strong>0.92 recall</strong> and <strong>0.82 specificity</strong> across 14 pulmonary pathologies.</li>
+            <li>Integrated CXAS anatomical zone segmentation (6-zone modeling) with rib-mask segmentation and dynamic thresholding.</li>
+            <li>Optimized models using ROC-AUC, F1-score, focal loss, and weighted BCE.</li>
+            <li>Implemented caching mechanisms reducing redundant model execution and improving inference efficiency.</li>
         </ul>
-    </nav>
-    <section id="about">
-        <h2>About Me</h2>
-        <p>A results-driven data science professional with expertise in machine learning, statistical analysis, and data-driven decision-making. Currently serving as a Project Associate at C-DAC Chennai, specializing in applied AI, data analytics, and process optimization. Passionate about transforming complex data into actionable intelligence to enhance efficiency and innovation.</p>
-    </section>
-    <section id="experience">
-        <h2>Experience</h2>
-    <section id="experience">
-        <h2>Experience</h2>
-        <div class="project">
-            <h3>Project Associate, Centre for Development of Advanced Computing (C-DAC), Chennai</h3>
-            <p><em>August 2024 - Present</em></p>
-            <ul>
-                <li>Developed a deep learning pipeline using DenseNet201 for multi-label classification of chest X-ray images from the NIH dataset, in collaboration with the National Institute for Research in Tuberculosis (NIRT), achieving a recall of 0.92 and specificity of 0.82 for 14 pathologies.</li>
-                <li>Utilized the CXAS model to segment chest X-ray images into 6 anatomical zones, enhancing diagnostic accuracy through rib mask segmentation, dynamic thresholding, focal loss, and weighted binary cross-entropy.</li>
-                <li>Optimized XrayCAD pipeline efficiency by implementing caching mechanisms to ensure the CXAS model runs only once per image, reducing redundant computations.</li>
-                <li>Developed a data-driven School Management System ERP in Odoo 16, leveraging PostgreSQL to optimize data storage, retrieval, and reporting for over 750 schools.</li>
-                <li>Integrated UDISE API to fetch and analyze school data from the National Informatics Centre (NIC), streamlining data ingestion and validation processes.</li>
-                <li>Implemented automated data pipelines using Python and SQL to clean, preprocess, and analyze student and attendance data, enabling real-time insights.</li>
-                <li>Designed real-time dashboards in Odoo for tracking student attendance and academic performance, improving reporting efficiency by 80%.</li>
-                <li>Performed exploratory data analysis (EDA) on student performance data to identify patterns and trends, supporting data-driven academic decisions.</li>
-                <li>Collaborated with cross-functional teams to design AI-driven and data-centric ERP solutions for academic and administrative workflows.</li>
-            </ul>
-        </div>
-    </section>
-    <section id="education">
-        <h2>Education</h2>
-        <div class="education">
-            <h3>Defence Institute of Advanced Technology, Pune</h3>
-            <p>M.Tech in Data Science</p>
-            <p><em>2022 - 2024</em>, CGPA: 8.16</p>
-        </div>
-        <div class="education">
-            <h3>Government Engineering College, Wayanad</h3>
-            <p>B.Tech in Mechanical Engineering</p>
-            <p><em>2017 - 2021</em>, CGPA: 8.31</p>
-        </div>
-    </section>
-    <section id="skills">
-        <h2>Skills</h2>
+
+        <h4>Puducherry Government School ERP (Pudupallikalvi)</h4>
         <ul>
-            <li><strong>Languages:</strong> Python, SQL, R</li>
-            <li><strong>Business Intelligence Tools:</strong> Tableau, Power BI</li>
-            <li><strong>Libraries:</strong> NumPy, Pandas, Scikit-learn, Keras, TensorFlow, Matplotlib, Plotly, Seaborn</li>
-            <li><strong>Technologies:</strong> Odoo, PostgreSQL, UDISE API</li>
-            <li><strong>General:</strong> Machine Learning, Deep Learning, Pattern Recognition, Data Analysis, Data Mining, Data Visualization, Statistics, Statistical Modeling, Exploratory Data Analysis, Predictive Modeling, Automation</li>
-            <li><strong>Soft Skills:</strong> Interpersonal Communication, Teamwork, Leadership, Analytical Thinking, Problem-Solving, Creativity, Adaptability, Reliability, Attention to Detail</li>
+            <li>Contributed to Odoo 16 + PostgreSQL ERP system deployed across <strong>750+ government schools</strong>.</li>
+            <li>Built automated Python-SQL data pipelines for attendance & academic analytics.</li>
+            <li>Designed real-time dashboards reducing reporting time by <strong>80%</strong>.</li>
+            <li>Performed large-scale EDA to support government education policy decisions.</li>
         </ul>
-    </section>
-    <section id="projects">
-        <h2>Projects</h2>
-        <div class="project">
-            <h3>Mitigation of Backdoor Poisoning Attacks in Deep Neural Networks</h3>
-            <p><em>January 2024</em></p>
-            <p>Implemented a backdoor attack mitigation system using DBSCAN clustering to identify potential poisoned data samples in the CIFAR-10 dataset. Applied heatmaps to visualize malicious points, localizing trigger positions, and used inpainting techniques to mitigate triggers. Reduced attack accuracy by 90% through model re-training.</p>
-        </div>
-        <div class="project">
-            <h3>Activity Volume Predictions in Twitter</h3>
-            <p><em>May 2023</em></p>
-            <p>Developed regression models (linear, ridge, lasso) to predict active discussions on Twitter. Evaluated models using R² Score, MAE, RMSE, and cross-validation. Lasso regression achieved the best generalization with an R² Score of 0.92.</p>
-        </div>
-        <div class="project">
-            <h3>Seoul Bike Rental Prediction</h3>
-            <p><em>February 2023</em></p>
-            <p>Built a predictive model for Seoul Bike Rentals using 12 months of historical data. Applied XGBRegressor with 1500 gradient-boosted trees and a 0.01 learning rate, achieving an R² Score of 0.91.</p>
-        </div>
-        <div class="project">
-            <h3>Financial Consumer Complaints Data Analysis Using Tableau</h3>
-            <p><em>July 2024</em></p>
-            <p>Analyzed 75,513 consumer complaints, revealing 98.05% timely bank responses and 0.37% pending. Identified top complaint categories (credit cards: 25.36%, checking/savings: 17.79%, mortgages: 16.51%). Visualized state-wise complaints using a hex map in Tableau.</p>
-        </div>
-    </section>
-    <section id="accomplishments">
-        <h2>Accomplishments</h2>
+
+        <h4>Research & R&D</h4>
         <ul>
-            <li>Collaborated with a 15-member team to organize the Arts Festival at GEC Wayanad.</li>
-            <li>Led a project to design a solar tea dryer using phase change materials, achieving 89% efficiency.</li>
-            <li>Completed 4 online data science courses on Coursera, specializing in machine learning and data visualization.</li>
-            <li>Lectured on R programming basics to first-year M.Tech students at DIAT Pune.</li>
+            <li>Exploring hybrid quantum-classical machine learning for medical imaging.</li>
+            <li>Researching neuromorphic computing and alternative neural paradigms.</li>
         </ul>
-    </section>
-    <section id="certifications">
-        <h2>Certifications</h2>
+    </div>
+</section>
+
+<section id="research">
+    <h2>Publications & Research</h2>
+
+    <div class="highlight">
+        <h3>Q3D-MRI-Net: A Hybrid Quantum–Classical 3D Network for Robust MRI-Based Alzheimer’s Disease Detection</h3>
+        <p><strong>Accepted – Conference on Computational Machine Learning (CML 2026), Sikkim, India</strong></p>
+        <p>
+            Developed a leakage-free 3D subject-level evaluation framework integrating 
+            a volumetric CNN with Parameterized Quantum Circuits (EstimatorQNN).
+            Conducted systematic skull-stripping ablation and qubit scalability analysis.
+        </p>
         <ul>
-            <li>Data Science Fundamentals with Python and SQL, IBM, September 2022</li>
-            <li>Algorithms Specialization, Stanford University, October 2022</li>
-            <li>Machine Learning Specialization, DeepLearning.AI & Stanford University, September 2022</li>
-            <li>Deep Learning Specialization, DeepLearning.AI, March 2023</li>
+            <li>Hybrid 3D CNN + PQC (2-qubit & 3-qubit configurations)</li>
+            <li>Strict subject-level split to eliminate data leakage</li>
+            <li>Robustness analysis: skull-stripped vs raw MRI</li>
+            <li>First systematic evaluation of quantum embedding robustness in volumetric neuroimaging</li>
         </ul>
-    </section>
-    <section id="languages">
-        <h2>Languages</h2>
+    </div>
+
+    <div class="highlight">
+        <h3>Data Poisoning Attacks and Defenses in Machine Learning: A Survey with Focus on Computer Vision</h3>
+        <p><strong>IEEE CVMI 2025 – NIT Rourkela</strong></p>
+        <p>
+            Comprehensive survey analyzing targeted label-flip and backdoor attacks 
+            in computer vision systems, reviewing detection and mitigation strategies.
+        </p>
+    </div>
+</section>
+
+<section id="projects">
+    <h2>Selected Projects</h2>
+
+    <div class="highlight">
+        <h3>Mitigation of Backdoor Poisoning Attacks</h3>
         <ul>
-            <li>Malayalam: Native</li>
-            <li>English: Fluent</li>
-            <li>Hindi: Intermediate</li>
+            <li>Detected poisoned CIFAR-10 samples using DBSCAN clustering.</li>
+            <li>Localized patch triggers via heatmaps.</li>
+            <li>Applied inpainting & retraining, reducing attack success rate by 90%.</li>
         </ul>
-    </section>
-    <section id="contact">
-        <h2>Contact</h2>
-        <p>Phone: +91-8075215391</p>
-        <p>Email: <a href="mailto:bassam22mji@gmail.com">bassam22mji@gmail.com</a></p>
-        <p>LinkedIn: <a href="https://linkedin.com/in/bassam-nazer">linkedin.com/in/bassam-nazer</a></p>
-        <p>GitHub: <a href="https://github.com/Bassam-123">github.com/Bassam-123</a></p>
-    </section>
-    <footer>
-        <p>© 2025 Bassam Nazer</p>
-    </footer>
+    </div>
+
+    <div class="highlight">
+        <h3>Financial Consumer Complaints Analytics</h3>
+        <ul>
+            <li>Analyzed 75,513 complaints dataset using Tableau.</li>
+            <li>Identified 98.05% timely resolution rate.</li>
+            <li>Built interactive hex-map dashboards for state-wise insights.</li>
+        </ul>
+    </div>
+</section>
+
+<section id="skills">
+    <h2>Technical Expertise</h2>
+
+    <ul>
+        <li><strong>Programming:</strong> Python, SQL</li>
+        <li><strong>ML & AI:</strong> Deep Learning, Computer Vision, NLP, Generative AI, MLOps</li>
+        <li><strong>Frameworks:</strong> TensorFlow, Keras, Scikit-learn, OpenCV</li>
+        <li><strong>Data Engineering:</strong> ETL Pipelines, SQL Optimization, Data Modeling</li>
+        <li><strong>Databases:</strong> PostgreSQL, MySQL, SQLite</li>
+        <li><strong>ERP Development:</strong> Odoo 16, Odoo ORM, Reporting</li>
+        <li><strong>Analytics & BI:</strong> Tableau, Dashboards, Statistical Modeling</li>
+    </ul>
+</section>
+
+<section id="awards">
+    <h2>Awards & Recognition</h2>
+    <div class="highlight">
+        <p>
+            <strong>ICMR–NIRT Award (2025)</strong> – Recognized for contribution 
+            to TB elimination through the XrayCAD AI system.
+        </p>
+    </div>
+</section>
+
+<section id="contact">
+    <h2>Contact</h2>
+    <p>Email: bassam22mji@gmail.com</p>
+    <p>Phone: +91-8075215391</p>
+    <p>GitHub: github.com/Bassam-123</p>
+    <p>LinkedIn: linkedin.com/in/bassam-nazer</p>
+</section>
+
+<footer>
+    © 2026 Bassam Nazer | Built with Passion for AI & Impact
+</footer>
+
 </body>
 </html>

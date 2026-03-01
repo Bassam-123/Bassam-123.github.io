@@ -5,110 +5,28 @@
     <title>Bassam Nazer | AI Engineer & Data Scientist</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <style>
-        body {
-            font-family: 'Segoe UI', Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f6f9;
-            color: #2d3748;
-            line-height: 1.7;
-        }
-
-        header {
-            background: linear-gradient(135deg, #1e3c72, #2a5298);
-            color: white;
-            text-align: center;
-            padding: 3em 1em;
-        }
-
-        header h1 {
-            margin: 0;
-            font-size: 2.7em;
-        }
-
-        header p {
-            margin-top: 10px;
-            font-size: 1.2em;
-            opacity: 0.9;
-        }
-
-        nav {
-            background: #1a202c;
-            text-align: center;
-            padding: 1em 0;
-            position: sticky;
-            top: 0;
-        }
-
-        nav a {
-            color: #e2e8f0;
-            text-decoration: none;
-            margin: 0 20px;
-            font-weight: 600;
-        }
-
-        nav a:hover {
-            color: #63b3ed;
-        }
-
-        section {
-            max-width: 1100px;
-            margin: 2em auto;
-            padding: 2em;
-            background: white;
-            border-radius: 8px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-        }
-
-        h2 {
-            color: #1e3c72;
-            border-bottom: 2px solid #e2e8f0;
-            padding-bottom: 8px;
-        }
-
-        .highlight {
-            border-left: 4px solid #2a5298;
-            padding-left: 1em;
-            margin: 1em 0;
-        }
-
-        ul {
-            padding-left: 20px;
-        }
-
-        footer {
-            text-align: center;
-            padding: 2em;
-            background: #1a202c;
-            color: white;
-        }
-
-        @media(max-width: 768px){
-            nav a {
-                display: block;
-                margin: 10px 0;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
 
 <header>
     <h1>Bassam Nazer</h1>
-    <p>AI Engineer | Healthcare AI | Computer Vision | Government-Scale ERP Systems</p>
-    <p>Project Associate – C-DAC Chennai | M.Tech Data Science</p>
+    <p class="subtitle"><span id="typed">AI Engineer | Healthcare AI | Computer Vision | Government-Scale ERP Systems</span><span class="typed-cursor">|</span></p>
+    <p class="subtitle-small">Project Associate – C-DAC Chennai | M.Tech Data Science</p>
 </header>
 
 <nav>
-    <a href="#about">About</a>
-    <a href="#experience">Experience</a>
-    <a href="#research">Research</a>
-    <a href="#projects">Projects</a>
-    <a href="#skills">Skills</a>
-    <a href="#awards">Awards</a>
-    <a href="#contact">Contact</a>
+    <button id="nav-toggle" aria-label="Toggle navigation">☰</button>
+    <ul id="nav-list">
+        <li><a href="#about">About</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#research">Research</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#awards">Awards</a></li>
+        <li><a href="#contact">Contact</a></li>
+    </ul>
 </nav>
 
 <section id="about">
@@ -129,7 +47,7 @@
 <section id="experience">
     <h2>Professional Experience</h2>
 
-    <div class="highlight">
+    <div class="project" data-animate>
         <h3>C-DAC Chennai — Project Associate (Aug 2024 – Present)</h3>
 
         <h4>XrayCAD – Healthcare AI System</h4>
@@ -159,7 +77,7 @@
 <section id="research">
     <h2>Publications & Research</h2>
 
-    <div class="highlight">
+    <div class="project" data-animate>
         <h3>Q3D-MRI-Net: A Hybrid Quantum–Classical 3D Network for Robust MRI-Based Alzheimer’s Disease Detection</h3>
         <p><strong>Accepted – Conference on Computational Machine Learning (CML 2026), Sikkim, India</strong></p>
         <p>
@@ -175,7 +93,7 @@
         </ul>
     </div>
 
-    <div class="highlight">
+    <div class="project" data-animate>
         <h3>Data Poisoning Attacks and Defenses in Machine Learning: A Survey with Focus on Computer Vision</h3>
         <p><strong>IEEE CVMI 2025 – NIT Rourkela</strong></p>
         <p>
@@ -188,7 +106,7 @@
 <section id="projects">
     <h2>Selected Projects</h2>
 
-    <div class="highlight">
+    <div class="project" data-animate>
         <h3>Mitigation of Backdoor Poisoning Attacks</h3>
         <ul>
             <li>Detected poisoned CIFAR-10 samples using DBSCAN clustering.</li>
@@ -197,7 +115,7 @@
         </ul>
     </div>
 
-    <div class="highlight">
+    <div class="project" data-animate>
         <h3>Financial Consumer Complaints Analytics</h3>
         <ul>
             <li>Analyzed 75,513 complaints dataset using Tableau.</li>
@@ -223,7 +141,7 @@
 
 <section id="awards">
     <h2>Awards & Recognition</h2>
-    <div class="highlight">
+    <div class="project" data-animate>
         <p>
             <strong>ICMR–NIRT Award (2025)</strong> – Recognized for contribution 
             to TB elimination through the XrayCAD AI system.
@@ -242,6 +160,8 @@
 <footer>
     © 2026 Bassam Nazer | Built with Passion for AI & Impact
 </footer>
+
+<script src="script.js"></script>
 
 </body>
 </html>

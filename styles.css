@@ -226,3 +226,74 @@ footer {
         font-size: 2em;
     }
 }
+
+/* ===========================
+   ANIMATION UTILITIES
+=========================== */
+
+.subtitle {
+    margin-top: 12px;
+    font-size: 1.05em;
+    opacity: 0.95;
+}
+
+.subtitle-small {
+    margin-top: 6px;
+    font-size: 0.95em;
+    opacity: 0.85;
+}
+
+.typed-cursor {
+    display: inline-block;
+    margin-left: 6px;
+    color: #93c5fd;
+    animation: blink 1s steps(2, start) infinite;
+}
+
+@keyframes blink { to { visibility: hidden; } }
+
+/* Reveal on scroll */
+.project[data-animate], section[data-animate] {
+    opacity: 0;
+    transform: translateY(18px) scale(0.995);
+    transition: opacity 600ms ease, transform 600ms ease;
+}
+
+.project[data-animate].reveal, section[data-animate].reveal {
+    opacity: 1;
+    transform: none;
+}
+
+/* Mobile nav toggle */
+#nav-toggle {
+    display: none;
+    background: transparent;
+    color: #e2e8f0;
+    border: none;
+    font-size: 1.4rem;
+    cursor: pointer;
+    margin-left: 12px;
+}
+
+#nav-list {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    margin: 0;
+    padding: 0;
+}
+
+#nav-list li {
+    list-style: none;
+}
+
+@media (max-width: 768px) {
+    #nav-toggle { display: inline-block; }
+    #nav-list { display: none; flex-direction: column; gap: 10px; }
+    #nav-list.open { display: flex; }
+}
+
+/* small hover polish for project cards */
+.project { transition: transform 300ms ease, box-shadow 300ms ease; }
+.project:hover { transform: translateY(-6px); box-shadow: 0 18px 40px rgba(15,23,42,0.08); }

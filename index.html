@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <title>Bassam Nazer | AI Engineer & Data Scientist</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <link rel="stylesheet" href="styles.css">
 </head>
 
@@ -12,8 +11,8 @@
 
 <header>
     <h1>Bassam Nazer</h1>
-    <p class="subtitle"><span id="typed">Data Scientist & AI Engineer </span><span class="typed-cursor">|</span></p>
-    <p class="subtitle-small">Project Associate – C-DAC Chennai | M.Tech Data Science</p>
+    <p class="subtitle"><span id="typed">AI/ML Engineer & Data Scientist</span><span class="typed-cursor">|</span></p>
+    <p class="subtitle-small">Project Associate – C-DAC Chennai | M.Tech Data Science, DIAT Pune</p>
 </header>
 
 <nav>
@@ -32,15 +31,10 @@
 <section id="about">
     <h2>About Me</h2>
     <p>
-        I am a Data Scientist and AI Engineer specializing in deep learning, computer vision, 
-        and large-scale data systems. I build end-to-end machine learning pipelines that move 
-        from research to production, delivering measurable impact in healthcare and public sector domains.
+        I am an AI/ML Engineer specializing in deep learning, LLM-powered systems, and Retrieval-Augmented Generation (RAG) pipelines. I build end-to-end machine learning solutions — from research and experimentation to production deployment — delivering measurable impact in healthcare and public sector domains.
     </p>
-
     <p>
-        Currently working at <strong>C-DAC Chennai</strong>, I contribute to national-level AI systems 
-        including medical imaging diagnostics and government ERP infrastructure. My work combines 
-        model optimization, applied research, and scalable engineering.
+        Currently working at <strong>C-DAC Chennai</strong>, I contribute to national-level AI systems including medical imaging diagnostics and government ERP infrastructure. My work spans model development, GenAI engineering, explainability, and scalable API deployment. I am recognized among <strong>196 global TB innovations</strong> by the Gates Foundation and the International Union Against Tuberculosis and Lung Disease, with publications at IEEE CVMI 2025 and CML 2026.
     </p>
 </section>
 
@@ -52,24 +46,28 @@
 
         <h4>XrayCAD – Healthcare AI System</h4>
         <ul>
-            <li>Designed a DenseNet201-based multi-label chest X-ray classifier achieving <strong>0.92 recall</strong> and <strong>0.82 specificity</strong> across 14 pulmonary pathologies.</li>
-            <li>Integrated CXAS anatomical zone segmentation (6-zone modeling) with rib-mask segmentation and dynamic thresholding.</li>
-            <li>Optimized models using ROC-AUC, F1-score, focal loss, and weighted BCE.</li>
-            <li>Implemented caching mechanisms reducing redundant model execution and improving inference efficiency.</li>
+            <li>Designed a DenseNet201-based multi-label chest X-ray classification pipeline achieving <strong>0.92 recall</strong> and <strong>0.86 specificity</strong> across 14 pulmonary pathologies; iterated model design through clinician feedback cycles with ICMR–NIRT radiologists.</li>
+            <li>Implemented anatomical zone segmentation (CXAS model) across six lung regions with lung masking; integrated GradCAM explainability for clinical decision support, applying class-specific thresholding to minimize false negatives for high-risk pathologies.</li>
+            <li>Optimized training with focal loss and weighted binary cross-entropy to address class imbalance; deployed inference pipeline via Flask REST APIs on NVIDIA Quadro multi-GPU systems with result caching for high-throughput clinical use.</li>
+        </ul>
+
+        <h4>Clinical Research LLM Agent</h4>
+        <ul>
+            <li>Built an LLM-powered medical research assistant integrating the PubMed API, FAISS-based semantic retrieval, and tool-augmented reasoning to answer clinical queries using real-world evidence.</li>
+            <li>Designed a multi-step agentic pipeline (search → index → retrieve → generate) using LangGraph and a local LLaMA 3.2 model, with enforced tool execution order to prevent LLM step-skipping.</li>
+            <li>Implemented hallucination control by constraining responses to retrieved PubMed abstracts, applying metadata-based filtering and deterministic generation (temperature=0).</li>
         </ul>
 
         <h4>Puducherry Government School ERP (Pudupallikalvi)</h4>
         <ul>
-            <li>Contributed to Odoo 16 + PostgreSQL ERP system deployed across <strong>750+ government schools</strong>.</li>
-            <li>Built automated Python-SQL data pipelines for attendance & academic analytics.</li>
-            <li>Designed real-time dashboards reducing reporting time by <strong>80%</strong>.</li>
-            <li>Performed large-scale EDA to support government education policy decisions.</li>
+            <li>Contributed to an Odoo 16 + PostgreSQL ERP system deployed across <strong>750+ government schools</strong>.</li>
+            <li>Built automated Python–SQL pipelines for student attendance and academic analytics.</li>
+            <li>Designed real-time dashboards reducing manual reporting time by <strong>80%</strong>.</li>
         </ul>
 
-        <h4>Research & R&D</h4>
+        <h4>Quantum–Classical Medical Imaging Research</h4>
         <ul>
-            <li>Exploring hybrid quantum-classical machine learning for medical imaging.</li>
-            <li>Researching neuromorphic computing and alternative neural paradigms.</li>
+            <li>Conducted R&D on hybrid quantum–classical neural networks for medical imaging, leading to Q3D-MRI-Net — a 3D CNN architecture for Alzheimer's disease detection accepted at CML 2026.</li>
         </ul>
     </div>
 </section>
@@ -78,12 +76,10 @@
     <h2>Publications & Research</h2>
 
     <div class="project" data-animate>
-        <h3>Q3D-MRI-Net: A Hybrid Quantum–Classical 3D Network for Robust MRI-Based Alzheimer’s Disease Detection</h3>
-        <p><strong>Accepted – Conference on Computational Machine Learning (CML 2026), Sikkim, India</strong></p>
+        <h3>Q3D-MRI-Net: A Hybrid Quantum–Classical 3D Network for Robust MRI-Based Alzheimer's Disease Detection</h3>
+        <p><strong>Accepted – International Conference on Computational Machine Learning (CML 2026), Sikkim, India</strong></p>
         <p>
-            Developed a leakage-free 3D subject-level evaluation framework integrating 
-            a volumetric CNN with Parameterized Quantum Circuits (EstimatorQNN).
-            Conducted systematic skull-stripping ablation and qubit scalability analysis.
+            Proposed a hybrid quantum–classical 3D CNN integrating Parameterized Quantum Circuits (EstimatorQNN) with a volumetric deep learning backbone for MRI-based Alzheimer's classification. Conducted subject-level train/test evaluation to eliminate data leakage and performed systematic skull-stripping and qubit scalability analysis.
         </p>
         <ul>
             <li>Hybrid 3D CNN + PQC (2-qubit & 3-qubit configurations)</li>
@@ -97,9 +93,9 @@
         <h3>Data Poisoning Attacks and Defenses in Machine Learning: A Survey with Focus on Computer Vision</h3>
         <p><strong>IEEE CVMI 2025 – NIT Rourkela</strong></p>
         <p>
-            Comprehensive survey analyzing targeted label-flip and backdoor attacks 
-            in computer vision systems, reviewing detection and mitigation strategies.
+            Comprehensive survey analyzing targeted label-flip and backdoor attacks in computer vision systems, reviewing detection and mitigation strategies across the ML security landscape.
         </p>
+        <p><a href="https://doi.org/10.1109/CVMI66673.2025.11337510" target="_blank">DOI: 10.1109/CVMI66673.2025.11337510</a></p>
     </div>
 </section>
 
@@ -107,58 +103,77 @@
     <h2>Selected Projects</h2>
 
     <div class="project" data-animate>
-        <h3>Mitigation of Backdoor Poisoning Attacks</h3>
+        <h3>Hierarchical RAG System for PDF Question Answering <span style="font-weight:normal; font-size:0.85em;">(March 2026)</span></h3>
         <ul>
-            <li>Detected poisoned CIFAR-10 samples using DBSCAN clustering.</li>
-            <li>Localized patch triggers via heatmaps.</li>
-            <li>Applied inpainting & retraining, reducing attack success rate by 90%.</li>
+            <li>Built a scalable multi-document QA system over <strong>100+ PDF files</strong> using a two-stage hierarchical retrieval pipeline (document-level + chunk-level), reducing irrelevant context retrieval by <strong>~40%</strong>.</li>
+            <li>Generated dense vector embeddings using BAAI/bge-large-en and indexed <strong>10,000+ text chunks</strong> in FAISS, achieving sub-second query latency.</li>
+            <li>Reduced hallucinations through metadata-based source filtering and prompt engineering — structured retrieval prompts constrain LLM responses to grounded context only.</li>
+            <li>Designed a coarse-to-fine retrieval strategy: document-level FAISS pre-filters relevant PDFs before chunk-level semantic search, improving answer precision on multi-document corpora.</li>
+        </ul>
+    </div>
+
+    <div class="project" data-animate>
+        <h3>Mitigation of Backdoor Poisoning Attacks in Deep Neural Networks <span style="font-weight:normal; font-size:0.85em;">(January 2024)</span></h3>
+        <ul>
+            <li>Implemented a backdoor attack mitigation system using DBSCAN clustering to identify poisoned samples with patch triggers in the CIFAR-10 dataset; applied spatial heatmaps to localize trigger positions.</li>
+            <li>Used inpainting to neutralize detected triggers; re-trained the model to reduce attack success rate by <strong>90%</strong>. Work forms the basis of the IEEE CVMI 2025 publication.</li>
         </ul>
     </div>
 
     <div class="project" data-animate>
         <h3>Financial Consumer Complaints Analytics</h3>
         <ul>
-            <li>Analyzed 75,513 complaints dataset using Tableau.</li>
-            <li>Identified 98.05% timely resolution rate.</li>
-            <li>Built interactive hex-map dashboards for state-wise insights.</li>
+            <li>Analyzed 75,513 complaints using Tableau; identified 98.05% timely resolution rate.</li>
+            <li>Built interactive hex-map dashboards for state-wise insights to support policy decisions.</li>
         </ul>
     </div>
 </section>
 
 <section id="skills">
-    <h2>Technical Expertise</h2>
+    <h2>Technical Skills</h2>
 
     <ul>
         <li><strong>Programming:</strong> Python, SQL</li>
-        <li><strong>ML & AI:</strong> Deep Learning, Computer Vision, NLP, Generative AI, MLOps</li>
-        <li><strong>Frameworks:</strong> TensorFlow, Keras, Scikit-learn, OpenCV</li>
-        <li><strong>Data Engineering:</strong> ETL Pipelines, SQL Optimization, Data Modeling</li>
+        <li><strong>ML & AI:</strong> Deep Learning, Computer Vision, Medical Image Analysis, Explainable AI (GradCAM), Generative AI, Quantum ML</li>
+        <li><strong>LLMs & RAG:</strong> Retrieval-Augmented Generation (RAG), LangChain, Hugging Face Transformers, Prompt Engineering, Vector Databases (FAISS), Local LLM Inference, LangGraph, Agentic Pipelines</li>
+        <li><strong>Frameworks:</strong> PyTorch, TensorFlow, Keras, Scikit-learn, OpenCV</li>
+        <li><strong>Data Science:</strong> NumPy, Pandas, Matplotlib, Plotly</li>
+        <li><strong>Deployment & APIs:</strong> Flask, REST APIs, Multi-GPU Inference, Result Caching</li>
         <li><strong>Databases:</strong> PostgreSQL, MySQL, SQLite</li>
-        <li><strong>ERP Development:</strong> Odoo 16, Odoo ORM, Reporting</li>
-        <li><strong>Analytics & BI:</strong> Tableau, Dashboards, Statistical Modeling</li>
+        <li><strong>Tools & Platforms:</strong> Git, Jupyter, VS Code, Odoo 16</li>
     </ul>
 </section>
 
 <section id="awards">
     <h2>Awards & Recognition</h2>
+
     <div class="project" data-animate>
+        <h4>India Innovation Summit for TB Elimination (2025)</h4>
         <p>
-            <strong>ICMR–NIRT Award (2025)</strong> – Recognized for contribution 
-            to TB elimination through the XrayCAD AI system.
+            XrayCAD selected among <strong>196 global TB innovations</strong> listed by the International Union Against Tuberculosis and Lung Disease and the <strong>Gates Foundation</strong>
+            (<a href="https://atlasoftbinnovations.in" target="_blank">atlasoftbinnovations.in</a>).
+        </p>
+    </div>
+
+    <div class="project" data-animate>
+        <h4>TB Research Dissemination Conference, ICMR–NIRT, Chennai (2025)</h4>
+        <p>
+            XrayCAD received an award from <strong>Dr. Senthil Kumar, IAS</strong>, Principal Secretary, Health and Family Welfare, Government of Tamil Nadu, for research efforts to protect lungs from TB in collaboration with ICMR–NIRT.
         </p>
     </div>
 </section>
 
 <section id="contact">
     <h2>Contact</h2>
-    <p>Email: bassam22mji@gmail.com</p>
+    <p>Email: <a href="mailto:bassam22mji@gmail.com">bassam22mji@gmail.com</a></p>
     <p>Phone: +91-8075215391</p>
-    <p>GitHub: github.com/Bassam-123</p>
-    <p>LinkedIn: linkedin.com/in/bassam-nazer</p>
+    <p>GitHub: <a href="https://github.com/Bassam-123" target="_blank">github.com/Bassam-123</a></p>
+    <p>LinkedIn: <a href="https://linkedin.com/in/bassam-nazer" target="_blank">linkedin.com/in/bassam-nazer</a></p>
+    <p>Portfolio: <a href="https://bassam-123.github.io" target="_blank">bassam-123.github.io</a></p>
 </section>
 
 <footer>
-    © 2026 Bassam Nazer | Built with Passion for AI & Impact
+    © 2026 Bassam Nazer | AI/ML Engineer & Data Scientist
 </footer>
 
 <script src="script.js"></script>

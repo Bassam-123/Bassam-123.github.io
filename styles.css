@@ -1661,78 +1661,63 @@ section.content-section {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 2.5rem;
-  align-items: center;
+  align-items: stretch;
 }
 
-.terminal-card {
-  background: #05070c;
-  border: 1px solid rgba(56, 189, 248, 0.3);
-  border-radius: var(--radius-lg);
-  overflow: hidden;
-  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.7), var(--glow-cyan);
-  font-family: var(--font-mono);
-}
-
-.terminal-top-bar {
-  background: #0f1422;
-  padding: 0.65rem 1rem;
+.contact-overview-card {
   display: flex;
-  align-items: center;
+  flex-direction: column;
   justify-content: space-between;
-  border-bottom: 1px solid var(--border-subtle);
+  padding: 2.25rem;
+  background: var(--bg-glass-card);
+  border: 1px solid var(--border-glass);
+  border-radius: var(--radius-xl);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  box-shadow: 
+    0 20px 45px rgba(0, 0, 0, 0.4),
+    inset 0 1px 1px rgba(255, 255, 255, 0.15),
+    inset 0 0 20px rgba(56, 189, 248, 0.03);
 }
 
-.terminal-dots {
-  display: flex;
-  gap: 6px;
-}
-
-.terminal-dot {
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-}
-
-.dot-red { background: #ef4444; }
-.dot-yellow { background: #f59e0b; }
-.dot-green { background: #10b981; }
-
-.terminal-title {
-  font-size: 0.75rem;
-  color: var(--text-muted);
-}
-
-.terminal-body {
-  padding: 1.5rem;
-  font-size: 0.85rem;
-  line-height: 1.8;
-  color: var(--text-secondary);
-}
-
-.term-line {
-  margin-bottom: 0.5rem;
-}
-
-.term-prompt {
-  color: var(--accent-emerald);
-}
-
-.term-cmd {
+.contact-overview-title {
+  font-size: 1.55rem;
+  font-weight: 700;
   color: #ffffff;
+  line-height: 1.3;
+  margin-bottom: 1rem;
 }
 
-.term-key {
-  color: var(--accent-cyan);
+.contact-overview-desc {
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  line-height: 1.7;
+  margin-bottom: 1.8rem;
 }
 
-.term-val {
-  color: #cbd5e1;
+.contact-meta-badges {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-top: auto;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--border-subtle);
 }
 
-.term-link {
-  color: var(--accent-cyan-bright);
-  text-decoration: underline;
-  text-underline-offset: 3px;
+.meta-badge-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  background: rgba(255, 255, 255, 0.03);
+  padding: 0.6rem 0.9rem;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border-subtle);
+}
+
+.meta-badge-icon {
+  font-size: 1rem;
 }
 
 .contact-channels-list {

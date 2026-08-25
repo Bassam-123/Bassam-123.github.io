@@ -1,7 +1,7 @@
 /**
  * ============================================================================
  * BASSAM NAZER — 3D AI/ML COMPUTATIONAL ENVIRONMENT
- * Interactive 3D WebGL Neural Landscape & Spatial Depth Engine
+ * Refined 3D Spatial Depth System, Camera Journey & Physics Engine
  * ============================================================================
  */
 
@@ -12,35 +12,52 @@
   const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   // ==========================================================================
-  // 1. THREE.JS 3D NEURAL & EMBEDDING SPACE
+  // 1. THREE.JS 3D SPATIAL DEPTH ENVIRONMENT
   // ==========================================================================
   const container = document.getElementById('webgl-container');
   let scene, camera, renderer;
-  let embeddingPoints, neuralNodesGroup, neuralLines, signalPackets = [];
-  let quantumManifold;
+  let ambientParticleField, thematicClustersGroup, signalPackets = [];
+  let quantumBlochSphere, visionDiagnosticGrid, ragRetrievalGraph, securityDefenseNode;
   let isRenderingPaused = false;
+  
+  // Mouse and Camera Tracking State
   let mouse = { x: 0, y: 0, targetX: 0, targetY: 0 };
-  let scrollProgress = 0;
+  let currentCamPos = new THREE.Vector3(0, 0, 80);
+  let targetCamPos = new THREE.Vector3(0, 0, 80);
+  let currentLookAt = new THREE.Vector3(0, 0, 0);
+  let targetLookAt = new THREE.Vector3(0, 0, 0);
+  
   let windowWidth = window.innerWidth;
   let windowHeight = window.innerHeight;
 
-  // Initialize WebGL Scene
+  // Section Waypoints for Cinematic Camera Journey
+  // Maps normalized vertical progression to intentional spatial coordinates
+  const waypoints = [
+    { progress: 0.00, pos: new THREE.Vector3(0, 0, 80), lookAt: new THREE.Vector3(0, 0, 0) },         // Hero: Neural Space
+    { progress: 0.14, pos: new THREE.Vector3(-10, -22, 68), lookAt: new THREE.Vector3(-2, -22, 0) },   // About: Foundation Architecture
+    { progress: 0.32, pos: new THREE.Vector3(12, -54, 58), lookAt: new THREE.Vector3(4, -54, 0) },    // Experience: Vision & Multi-GPU
+    { progress: 0.50, pos: new THREE.Vector3(-14, -90, 52), lookAt: new THREE.Vector3(-4, -90, 0) },   // Projects: RAG & Agentic Loops
+    { progress: 0.68, pos: new THREE.Vector3(10, -124, 56), lookAt: new THREE.Vector3(2, -124, 0) },   // Research: Quantum & Adversarial ML
+    { progress: 0.82, pos: new THREE.Vector3(-8, -156, 66), lookAt: new THREE.Vector3(0, -156, 0) },   // Awards & Education
+    { progress: 1.00, pos: new THREE.Vector3(0, -188, 62), lookAt: new THREE.Vector3(0, -188, 0) }     // Contact: System Hub
+  ];
+
   function init3DScene() {
     if (!container || typeof THREE === 'undefined') {
-      console.warn('Three.js not loaded or container missing; using CSS fallback.');
+      console.warn('Three.js not available; using CSS grid fallback.');
       return;
     }
 
     try {
-      // Scene
+      // Scene & Atmospheric Fog
       scene = new THREE.Scene();
-      scene.fog = new THREE.FogExp2(0x06080d, 0.0018);
+      scene.fog = new THREE.FogExp2(0x06080d, 0.0015);
 
       // Camera
-      camera = new THREE.PerspectiveCamera(55, windowWidth / windowHeight, 0.1, 1000);
-      camera.position.set(0, 0, 75);
+      camera = new THREE.PerspectiveCamera(52, windowWidth / windowHeight, 0.1, 1000);
+      camera.position.copy(currentCamPos);
 
-      // Renderer
+      // WebGL Renderer
       renderer = new THREE.WebGLRenderer({
         alpha: true,
         antialias: true,
@@ -51,218 +68,264 @@
       renderer.setClearColor(0x000000, 0);
       container.appendChild(renderer.domElement);
 
-      // Ambient & Directional Lighting
-      const ambientLight = new THREE.AmbientLight(0x0f172a, 1.5);
+      // Lighting Setup
+      const ambientLight = new THREE.AmbientLight(0x0f172a, 1.4);
       scene.add(ambientLight);
 
-      const pointLight1 = new THREE.PointLight(0x38bdf8, 2, 200);
-      pointLight1.position.set(50, 40, 50);
-      scene.add(pointLight1);
+      const lightCyan = new THREE.PointLight(0x38bdf8, 2.2, 220);
+      lightCyan.position.set(45, 30, 40);
+      scene.add(lightCyan);
 
-      const pointLight2 = new THREE.PointLight(0x818cf8, 1.8, 200);
-      pointLight2.position.set(-50, -30, 40);
-      scene.add(pointLight2);
+      const lightViolet = new THREE.PointLight(0x818cf8, 1.8, 220);
+      lightViolet.position.set(-45, -30, 30);
+      scene.add(lightViolet);
 
-      // Build 3D Layers
-      createEmbeddingPointCloud();
-      createNeuralNetwork();
-      createQuantumManifold();
+      // Build 3-Tier Layered Space
+      createFarAmbientField();
+      createThematicAIGraph();
 
-      // Start Animation Loop
+      // Start Render Loop
       animate();
 
     } catch (e) {
-      console.error('Error initializing WebGL:', e);
+      console.error('WebGL Initialization Error:', e);
     }
   }
 
-  // --- Layer 1: High-Dimensional Embedding Point Cloud ---
-  function createEmbeddingPointCloud() {
-    const count = windowWidth < 768 ? 600 : 1300;
+  // --- Layer 1: FAR Ambient Particle Field with Center Readability Corridor ---
+  function createFarAmbientField() {
+    const count = windowWidth < 768 ? 400 : 850;
     const geometry = new THREE.BufferGeometry();
     const positions = new Float32Array(count * 3);
     const colors = new Float32Array(count * 3);
-    const scales = new Float32Array(count);
 
-    const color1 = new THREE.Color(0x38bdf8); // Cyan
-    const color2 = new THREE.Color(0x818cf8); // Violet
-    const color3 = new THREE.Color(0x0284c7); // Deep Blue
-    const color4 = new THREE.Color(0x10b981); // Emerald
-
-    // Cluster Centers representing semantic vector clusters (Vision, LLM, Quantum, Security)
-    const clusterCenters = [
-      new THREE.Vector3(-25, 15, -10),
-      new THREE.Vector3(25, -10, -20),
-      new THREE.Vector3(0, -25, -5),
-      new THREE.Vector3(20, 20, -15),
-      new THREE.Vector3(-20, -20, 10)
-    ];
+    const cCyan = new THREE.Color(0x38bdf8);
+    const cViolet = new THREE.Color(0x818cf8);
+    const cBlue = new THREE.Color(0x0284c7);
+    const cEmerald = new THREE.Color(0x10b981);
 
     for (let i = 0; i < count; i++) {
-      const cluster = clusterCenters[i % clusterCenters.length];
-      const spread = 22;
+      // Cylindrical distribution with central exclusion zone for clear text reading
+      const radius = 18 + Math.random() * 65; // Keeps particles away from center corridor
+      const angle = Math.random() * Math.PI * 2;
+      const height = (Math.random() - 0.5) * 280;
 
-      // Gaussian-like cluster distribution
-      const u = Math.random() + Math.random() + Math.random() - 1.5;
-      const v = Math.random() + Math.random() + Math.random() - 1.5;
-      const w = Math.random() + Math.random() + Math.random() - 1.5;
-
-      const x = cluster.x + u * spread;
-      const y = cluster.y + v * spread;
-      const z = cluster.z + w * spread;
+      const x = Math.cos(angle) * radius;
+      const y = height;
+      const z = Math.sin(angle) * radius * 0.7 - 20;
 
       positions[i * 3] = x;
       positions[i * 3 + 1] = y;
       positions[i * 3 + 2] = z;
 
-      // Color selection based on position
+      // Color selection based on depth & height
       const mixedColor = new THREE.Color();
-      if (x < 0 && y > 0) mixedColor.copy(color1);
-      else if (x >= 0 && y >= 0) mixedColor.copy(color2);
-      else if (x < 0 && y < 0) mixedColor.copy(color4);
-      else mixedColor.copy(color3);
+      if (y > 0 && x < 0) mixedColor.copy(cCyan);
+      else if (y > 0 && x >= 0) mixedColor.copy(cViolet);
+      else if (y <= 0 && x >= 0) mixedColor.copy(cEmerald);
+      else mixedColor.copy(cBlue);
 
       colors[i * 3] = mixedColor.r;
       colors[i * 3 + 1] = mixedColor.g;
       colors[i * 3 + 2] = mixedColor.b;
-
-      scales[i] = Math.random() * 2.0 + 1.0;
     }
 
     geometry.setAttribute('position', new THREE.BufferAttribute(positions, 3));
     geometry.setAttribute('color', new THREE.BufferAttribute(colors, 3));
 
-    // Particle Material
-    const pMaterial = new THREE.PointsMaterial({
-      size: 1.5,
+    const material = new THREE.PointsMaterial({
+      size: 1.4,
       vertexColors: true,
       transparent: true,
-      opacity: 0.65,
+      opacity: 0.55,
       blending: THREE.AdditiveBlending,
       sizeAttenuation: true
     });
 
-    embeddingPoints = new THREE.Points(geometry, pMaterial);
-    scene.add(embeddingPoints);
+    ambientParticleField = new THREE.Points(geometry, material);
+    scene.add(ambientParticleField);
   }
 
-  // --- Layer 2: Neural Graph & Synaptic Pathways ---
-  function createNeuralNetwork() {
-    neuralNodesGroup = new THREE.Group();
-    const nodeCount = windowWidth < 768 ? 32 : 65;
-    const nodes = [];
-    const maxConnectionDistance = 24;
-
-    const nodeGeo = new THREE.SphereGeometry(0.55, 12, 12);
-    const nodeMat = new THREE.MeshBasicMaterial({
-      color: 0x38bdf8,
-      transparent: true,
-      opacity: 0.85
-    });
-
-    // Generate Graph Nodes in 3D Space
-    for (let i = 0; i < nodeCount; i++) {
-      const mesh = new THREE.Mesh(nodeGeo, nodeMat.clone());
-      const theta = Math.random() * Math.PI * 2;
-      const phi = Math.acos((Math.random() * 2) - 1);
-      const radius = 15 + Math.random() * 30;
-
-      mesh.position.x = radius * Math.sin(phi) * Math.cos(theta);
-      mesh.position.y = (radius * Math.sin(phi) * Math.sin(theta)) * 0.7;
-      mesh.position.z = (radius * Math.cos(phi)) - 10;
-
-      // Base oscillation properties
-      mesh.userData = {
-        baseX: mesh.position.x,
-        baseY: mesh.position.y,
-        baseZ: mesh.position.z,
-        freq: 0.5 + Math.random() * 1.5,
-        phase: Math.random() * Math.PI * 2
-      };
-
-      neuralNodesGroup.add(mesh);
-      nodes.push(mesh);
-    }
-
-    // Connect Neighboring Nodes with Lines
-    const linePositions = [];
-    const lineColors = [];
+  // --- Layer 2: Thematic AI Domain Clusters & Synaptic Pathways ---
+  function createThematicAIGraph() {
+    thematicClustersGroup = new THREE.Group();
     const connections = [];
 
-    for (let i = 0; i < nodes.length; i++) {
-      for (let j = i + 1; j < nodes.length; j++) {
-        const dist = nodes[i].position.distanceTo(nodes[j].position);
-        if (dist < maxConnectionDistance) {
-          linePositions.push(
-            nodes[i].position.x, nodes[i].position.y, nodes[i].position.z,
-            nodes[j].position.x, nodes[j].position.y, nodes[j].position.z
-          );
+    // --- Cluster 1: XrayCAD Medical Vision Plane (Experience Zone) ---
+    visionDiagnosticGrid = new THREE.Group();
+    visionDiagnosticGrid.position.set(22, -54, -12);
 
-          const alpha = 1.0 - (dist / maxConnectionDistance);
-          lineColors.push(
-            0.22, 0.74, 0.97, alpha * 0.4,
-            0.5, 0.55, 0.97, alpha * 0.4
-          );
-
-          connections.push({ from: nodes[i], to: nodes[j] });
-        }
+    const gridPoints = [];
+    const gridRows = 4, gridCols = 4;
+    for (let r = 0; r < gridRows; r++) {
+      for (let c = 0; c < gridCols; c++) {
+        const nodeGeo = new THREE.SphereGeometry(0.5, 8, 8);
+        const isHeatNode = (r === 1 && c === 2) || (r === 2 && c === 2);
+        const nodeMat = new THREE.MeshBasicMaterial({
+          color: isHeatNode ? 0xf43f5e : 0x38bdf8,
+          transparent: true,
+          opacity: isHeatNode ? 0.95 : 0.65
+        });
+        const nodeMesh = new THREE.Mesh(nodeGeo, nodeMat);
+        nodeMesh.position.set((c - 1.5) * 5, (r - 1.5) * 5, 0);
+        visionDiagnosticGrid.add(nodeMesh);
+        gridPoints.push(nodeMesh);
       }
     }
 
-    const lineGeometry = new THREE.BufferGeometry();
-    lineGeometry.setAttribute('position', new THREE.Float32BufferAttribute(linePositions, 3));
-    
-    const lineMaterial = new THREE.LineBasicMaterial({
-      color: 0x38bdf8,
-      transparent: true,
-      opacity: 0.22,
-      blending: THREE.AdditiveBlending
-    });
+    // Connect vision grid lines
+    const visionLinePos = [];
+    for (let r = 0; r < gridRows; r++) {
+      for (let c = 0; c < gridCols; c++) {
+        const idx = r * gridCols + c;
+        if (c + 1 < gridCols) {
+          const nextC = idx + 1;
+          visionLinePos.push(
+            gridPoints[idx].position.x, gridPoints[idx].position.y, gridPoints[idx].position.z,
+            gridPoints[nextC].position.x, gridPoints[nextC].position.y, gridPoints[nextC].position.z
+          );
+          connections.push({ from: gridPoints[idx], to: gridPoints[nextC], parent: visionDiagnosticGrid });
+        }
+        if (r + 1 < gridRows) {
+          const nextR = (r + 1) * gridCols + c;
+          visionLinePos.push(
+            gridPoints[idx].position.x, gridPoints[idx].position.y, gridPoints[idx].position.z,
+            gridPoints[nextR].position.x, gridPoints[nextR].position.y, gridPoints[nextR].position.z
+          );
+          connections.push({ from: gridPoints[idx], to: gridPoints[nextR], parent: visionDiagnosticGrid });
+        }
+      }
+    }
+    const visionLineGeo = new THREE.BufferGeometry();
+    visionLineGeo.setAttribute('position', new THREE.Float32BufferAttribute(visionLinePos, 3));
+    const visionLineMat = new THREE.LineBasicMaterial({ color: 0x38bdf8, transparent: true, opacity: 0.22 });
+    visionDiagnosticGrid.add(new THREE.LineSegments(visionLineGeo, visionLineMat));
+    thematicClustersGroup.add(visionDiagnosticGrid);
 
-    neuralLines = new THREE.LineSegments(lineGeometry, lineMaterial);
-    neuralNodesGroup.add(neuralLines);
-    scene.add(neuralNodesGroup);
+    // --- Cluster 2: APACS RAG & Knowledge Retrieval Pathway (Projects Zone) ---
+    ragRetrievalGraph = new THREE.Group();
+    ragRetrievalGraph.position.set(-24, -90, -10);
 
-    // Create Signal Packets (Traveling Light Pulses along Synapses)
-    const packetCount = Math.min(connections.length, 25);
-    const packetGeo = new THREE.SphereGeometry(0.35, 8, 8);
-    const packetMat = new THREE.MeshBasicMaterial({
-      color: 0x00f2fe,
-      transparent: true,
-      opacity: 0.95
+    const docNodes = [];
+    for (let d = 0; d < 6; d++) {
+      const dGeo = new THREE.BoxGeometry(0.7, 0.9, 0.1);
+      const dMat = new THREE.MeshBasicMaterial({ color: 0x818cf8, transparent: true, opacity: 0.75 });
+      const dMesh = new THREE.Mesh(dGeo, dMat);
+      dMesh.position.set(-8 + Math.random() * 4, -6 + d * 2.5, (Math.random() - 0.5) * 4);
+      ragRetrievalGraph.add(dMesh);
+      docNodes.push(dMesh);
+    }
+
+    // Central Reranker & Generator Nodes
+    const rerankerGeo = new THREE.SphereGeometry(0.9, 10, 10);
+    const rerankerMat = new THREE.MeshBasicMaterial({ color: 0x38bdf8, transparent: true, opacity: 0.9 });
+    const rerankerMesh = new THREE.Mesh(rerankerGeo, rerankerMat);
+    rerankerMesh.position.set(2, 0, 0);
+    ragRetrievalGraph.add(rerankerMesh);
+
+    const genGeo = new THREE.IcosahedronGeometry(1.2, 0);
+    const genMat = new THREE.MeshBasicMaterial({ color: 0x10b981, wireframe: true, transparent: true, opacity: 0.85 });
+    const genMesh = new THREE.Mesh(genGeo, genMat);
+    genMesh.position.set(8, 0, 0);
+    ragRetrievalGraph.add(genMesh);
+
+    // Retrieval Lines from Docs to Reranker to Gen
+    const ragLinePos = [];
+    docNodes.forEach(doc => {
+      ragLinePos.push(
+        doc.position.x, doc.position.y, doc.position.z,
+        rerankerMesh.position.x, rerankerMesh.position.y, rerankerMesh.position.z
+      );
+      connections.push({ from: doc, to: rerankerMesh, parent: ragRetrievalGraph });
     });
+    ragLinePos.push(
+      rerankerMesh.position.x, rerankerMesh.position.y, rerankerMesh.position.z,
+      genMesh.position.x, genMesh.position.y, genMesh.position.z
+    );
+    connections.push({ from: rerankerMesh, to: genMesh, parent: ragRetrievalGraph });
+
+    const ragLineGeo = new THREE.BufferGeometry();
+    ragLineGeo.setAttribute('position', new THREE.Float32BufferAttribute(ragLinePos, 3));
+    const ragLineMat = new THREE.LineBasicMaterial({ color: 0x818cf8, transparent: true, opacity: 0.3 });
+    ragRetrievalGraph.add(new THREE.LineSegments(ragLineGeo, ragLineMat));
+    thematicClustersGroup.add(ragRetrievalGraph);
+
+    // --- Cluster 3: Q3D-MRI-Net Quantum Manifold (Research Zone) ---
+    quantumBlochSphere = new THREE.Group();
+    quantumBlochSphere.position.set(24, -124, -15);
+
+    const outerRingGeo = new THREE.TorusGeometry(8, 0.08, 12, 48);
+    const ringMat1 = new THREE.MeshBasicMaterial({ color: 0x818cf8, transparent: true, opacity: 0.35 });
+    const ring1 = new THREE.Mesh(outerRingGeo, ringMat1);
+    quantumBlochSphere.add(ring1);
+
+    const ring2 = new THREE.Mesh(outerRingGeo, ringMat1.clone());
+    ring2.rotation.x = Math.PI / 2;
+    quantumBlochSphere.add(ring2);
+
+    const coreIcosaGeo = new THREE.IcosahedronGeometry(3.5, 1);
+    const coreIcosaMat = new THREE.MeshBasicMaterial({ color: 0xc084fc, wireframe: true, transparent: true, opacity: 0.25 });
+    const coreIcosa = new THREE.Mesh(coreIcosaGeo, coreIcosaMat);
+    quantumBlochSphere.add(coreIcosa);
+    thematicClustersGroup.add(quantumBlochSphere);
+
+    // --- Cluster 4: Security Trigger & Anomaly Filtering Node ---
+    securityDefenseNode = new THREE.Group();
+    securityDefenseNode.position.set(-20, -156, -12);
+
+    const trigGeo = new THREE.OctahedronGeometry(2.5, 0);
+    const trigMat = new THREE.MeshBasicMaterial({ color: 0xf59e0b, wireframe: true, transparent: true, opacity: 0.4 });
+    const trigMesh = new THREE.Mesh(trigGeo, trigMat);
+    securityDefenseNode.add(trigMesh);
+    thematicClustersGroup.add(securityDefenseNode);
+
+    scene.add(thematicClustersGroup);
+
+    // Create Signal Packets (Traveling Inference Pulses)
+    const packetCount = Math.min(connections.length, 18);
+    const packetGeo = new THREE.SphereGeometry(0.3, 6, 6);
+    const packetMat = new THREE.MeshBasicMaterial({ color: 0x00f2fe, transparent: true, opacity: 0.95 });
 
     for (let p = 0; p < packetCount; p++) {
-      const conn = connections[Math.floor(Math.random() * connections.length)];
+      const conn = connections[p % connections.length];
       const packetMesh = new THREE.Mesh(packetGeo, packetMat);
-      scene.add(packetMesh);
+      conn.parent.add(packetMesh);
       signalPackets.push({
         mesh: packetMesh,
         from: conn.from,
         to: conn.to,
         progress: Math.random(),
-        speed: 0.003 + Math.random() * 0.006
+        speed: 0.004 + Math.random() * 0.007
       });
     }
   }
 
-  // --- Layer 3: Abstract Quantum / Computational Manifold Wireframe ---
-  function createQuantumManifold() {
-    const geo = new THREE.IcosahedronGeometry(18, 1);
-    const wireframeMat = new THREE.MeshBasicMaterial({
-      color: 0x818cf8,
-      wireframe: true,
-      transparent: true,
-      opacity: 0.07,
-      blending: THREE.AdditiveBlending
-    });
+  // --- Waypoint Interpolation Engine ---
+  function updateCameraWaypoints(progress) {
+    if (prefersReducedMotion) return;
 
-    quantumManifold = new THREE.Mesh(geo, wireframeMat);
-    quantumManifold.position.set(25, -15, -25);
-    scene.add(quantumManifold);
+    // Find current waypoint segment
+    let p = Math.max(0, Math.min(1, progress));
+    let segIdx = 0;
+    for (let i = 0; i < waypoints.length - 1; i++) {
+      if (p >= waypoints[i].progress && p <= waypoints[i + 1].progress) {
+        segIdx = i;
+        break;
+      }
+    }
+
+    const w1 = waypoints[segIdx];
+    const w2 = waypoints[segIdx + 1] || waypoints[segIdx];
+    const segT = (p - w1.progress) / ((w2.progress - w1.progress) || 1);
+
+    // Smooth cubic easing between waypoints
+    const easeT = segT * segT * (3 - 2 * segT);
+
+    targetCamPos.lerpVectors(w1.pos, w2.pos, easeT);
+    targetLookAt.lerpVectors(w1.lookAt, w2.lookAt, easeT);
   }
 
-  // --- Animation Loop ---
+  // --- Main Animation Loop ---
   let clock = new THREE.Clock();
 
   function animate() {
@@ -272,43 +335,45 @@
 
     const elapsedTime = clock.getElapsedTime();
 
-    // Smooth Camera Interpolation (Mouse Parallax & Scroll Depth)
+    // Mouse Parallax Damping
     if (!prefersReducedMotion) {
       mouse.x += (mouse.targetX - mouse.x) * 0.05;
       mouse.y += (mouse.targetY - mouse.y) * 0.05;
 
-      const targetCamX = mouse.x * 12;
-      const targetCamY = mouse.y * 10 - (scrollProgress * 45);
-      const targetCamZ = 75 - (scrollProgress * 25);
+      // Combine Waypoint target with mouse parallax offset
+      const finalTargetX = targetCamPos.x + mouse.x * 6;
+      const finalTargetY = targetCamPos.y + mouse.y * 5;
+      const finalTargetZ = targetCamPos.z;
 
-      camera.position.x += (targetCamX - camera.position.x) * 0.05;
-      camera.position.y += (targetCamY - camera.position.y) * 0.05;
-      camera.position.z += (targetCamZ - camera.position.z) * 0.05;
-      camera.lookAt(0, - (scrollProgress * 30), 0);
+      currentCamPos.x += (finalTargetX - currentCamPos.x) * 0.04;
+      currentCamPos.y += (finalTargetY - currentCamPos.y) * 0.04;
+      currentCamPos.z += (finalTargetZ - currentCamPos.z) * 0.04;
+
+      currentLookAt.x += (targetLookAt.x - currentLookAt.x) * 0.04;
+      currentLookAt.y += (targetLookAt.y - currentLookAt.y) * 0.04;
+      currentLookAt.z += (targetLookAt.z - currentLookAt.z) * 0.04;
+
+      camera.position.copy(currentCamPos);
+      camera.lookAt(currentLookAt);
     }
 
-    // Subtle Continuous Rotations
-    if (embeddingPoints) {
-      embeddingPoints.rotation.y = elapsedTime * 0.02;
-      embeddingPoints.rotation.x = elapsedTime * 0.01;
+    // Subtle Continuous Drifting of Layers
+    if (ambientParticleField) {
+      ambientParticleField.rotation.y = elapsedTime * 0.012;
     }
 
-    if (neuralNodesGroup) {
-      neuralNodesGroup.rotation.y = -elapsedTime * 0.015;
-      
-      // Node subtle natural breathing
-      neuralNodesGroup.children.forEach(child => {
-        if (child.isMesh && child.userData.freq) {
-          const ud = child.userData;
-          child.position.y = ud.baseY + Math.sin(elapsedTime * ud.freq + ud.phase) * 0.8;
-          child.position.x = ud.baseX + Math.cos(elapsedTime * ud.freq * 0.7 + ud.phase) * 0.6;
-        }
-      });
+    if (quantumBlochSphere) {
+      quantumBlochSphere.rotation.x = elapsedTime * 0.04;
+      quantumBlochSphere.rotation.y = elapsedTime * 0.06;
     }
 
-    if (quantumManifold) {
-      quantumManifold.rotation.x = elapsedTime * 0.03;
-      quantumManifold.rotation.y = elapsedTime * 0.04;
+    if (visionDiagnosticGrid) {
+      visionDiagnosticGrid.rotation.z = Math.sin(elapsedTime * 0.5) * 0.04;
+    }
+
+    if (securityDefenseNode) {
+      securityDefenseNode.rotation.y = elapsedTime * 0.05;
+      securityDefenseNode.rotation.z = elapsedTime * 0.03;
     }
 
     // Animate Signal Packets along Synaptic Paths
@@ -338,14 +403,16 @@
   }
 
   function onMouseMove(e) {
-    // Normalized Mouse Coordinates: [-1, 1]
     mouse.targetX = (e.clientX / windowWidth) * 2 - 1;
     mouse.targetY = -(e.clientY / windowHeight) * 2 + 1;
   }
 
   function onScroll() {
     const maxScroll = document.documentElement.scrollHeight - windowHeight;
-    scrollProgress = maxScroll > 0 ? window.scrollY / maxScroll : 0;
+    const scrollProgress = maxScroll > 0 ? window.scrollY / maxScroll : 0;
+
+    // Update 3D Camera Waypoint based on scroll
+    updateCameraWaypoints(scrollProgress);
 
     // Header Background Scroll State
     const header = document.getElementById('site-header');
@@ -358,7 +425,7 @@
     }
   }
 
-  // Lifecycle & Performance Pause
+  // Lifecycle Visibility Pause
   document.addEventListener('visibilitychange', () => {
     isRenderingPaused = document.hidden;
   });
@@ -368,7 +435,7 @@
   window.addEventListener('scroll', onScroll, { passive: true });
 
   // ==========================================================================
-  // 2. INTERACTIVE 3D CARD TILT & SPECULAR GLARE
+  // 2. SPRING-INTERPOLATED 3D CARD TILT & SPECULAR GLARE
   // ==========================================================================
   function init3DTiltCards() {
     if (prefersReducedMotion || (window.matchMedia('(hover: none)').matches)) return;
@@ -379,6 +446,25 @@
       const inner = card.querySelector('.tilt-inner') || card;
       const glare = card.querySelector('.tilt-glare');
 
+      let targetRotX = 0, targetRotY = 0;
+      let currentRotX = 0, currentRotY = 0;
+      let isHovered = false;
+      let animFrameId = null;
+
+      function updateTilt() {
+        currentRotX += (targetRotX - currentRotX) * 0.12;
+        currentRotY += (targetRotY - currentRotY) * 0.12;
+
+        const elevation = isHovered ? 10 : 0;
+        inner.style.transform = `perspective(1000px) rotateX(${currentRotX.toFixed(2)}deg) rotateY(${currentRotY.toFixed(2)}deg) translateZ(${elevation}px)`;
+
+        if (isHovered || Math.abs(currentRotX) > 0.05 || Math.abs(currentRotY) > 0.05) {
+          animFrameId = requestAnimationFrame(updateTilt);
+        } else {
+          animFrameId = null;
+        }
+      }
+
       card.addEventListener('mousemove', (e) => {
         const rect = card.getBoundingClientRect();
         const x = e.clientX - rect.left;
@@ -387,30 +473,90 @@
         const centerX = rect.width / 2;
         const centerY = rect.height / 2;
 
-        const rotateX = ((y - centerY) / centerY) * -6.5; // Max 6.5deg pitch
-        const rotateY = ((x - centerX) / centerX) * 6.5;  // Max 6.5deg roll
-
-        inner.style.transform = `perspective(1000px) rotateX(${rotateX.toFixed(2)}deg) rotateY(${rotateY.toFixed(2)}deg) translateZ(8px)`;
+        // Controlled rotation angles (max ±5.0 deg for clean readability)
+        targetRotX = ((y - centerY) / centerY) * -5.0;
+        targetRotY = ((x - centerX) / centerX) * 5.0;
 
         if (glare) {
           card.style.setProperty('--mouse-x', `${(x / rect.width) * 100}%`);
           card.style.setProperty('--mouse-y', `${(y / rect.height) * 100}%`);
         }
-      });
 
-      card.addEventListener('mouseleave', () => {
-        inner.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg) translateZ(0px)';
-        inner.style.transition = 'transform 0.4s cubic-bezier(0.16, 1, 0.3, 1)';
+        if (!animFrameId) {
+          animFrameId = requestAnimationFrame(updateTilt);
+        }
       });
 
       card.addEventListener('mouseenter', () => {
-        inner.style.transition = 'transform 0.1s ease-out';
+        isHovered = true;
+        if (!animFrameId) animFrameId = requestAnimationFrame(updateTilt);
+      });
+
+      card.addEventListener('mouseleave', () => {
+        isHovered = false;
+        targetRotX = 0;
+        targetRotY = 0;
       });
     });
   }
 
   // ==========================================================================
-  // 3. CUSTOM AMBIENT CURSOR
+  // 3. LIVE COMPUTATIONAL TELEMETRY COUNTERS
+  // ==========================================================================
+  function initTelemetryCounters() {
+    const counters = document.querySelectorAll('.counter-num');
+    if (!counters.length) return;
+
+    let hasAnimated = false;
+
+    function animateCounters() {
+      counters.forEach(counter => {
+        const target = parseFloat(counter.getAttribute('data-counter-target') || '0');
+        const decimals = parseInt(counter.getAttribute('data-counter-decimals') || '0', 10);
+        const duration = 1600; // ms
+        const startTime = performance.now();
+
+        function step(now) {
+          const elapsed = now - startTime;
+          const progress = Math.min(elapsed / duration, 1.0);
+          
+          // Cubic ease-out
+          const easeProgress = 1 - Math.pow(1 - progress, 3);
+          const currentVal = easeProgress * target;
+
+          counter.textContent = currentVal.toFixed(decimals);
+
+          if (progress < 1.0) {
+            requestAnimationFrame(step);
+          } else {
+            counter.textContent = target.toFixed(decimals);
+          }
+        }
+
+        requestAnimationFrame(step);
+      });
+    }
+
+    const heroSection = document.querySelector('.hero-telemetry-grid');
+    if (heroSection && 'IntersectionObserver' in window) {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting && !hasAnimated) {
+            hasAnimated = true;
+            animateCounters();
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.2 });
+
+      observer.observe(heroSection);
+    } else {
+      animateCounters();
+    }
+  }
+
+  // ==========================================================================
+  // 4. CUSTOM AMBIENT CURSOR
   // ==========================================================================
   function initCustomCursor() {
     const dot = document.getElementById('cursor-dot');
@@ -450,7 +596,7 @@
   }
 
   // ==========================================================================
-  // 4. DYNAMIC TERMINAL ROLE ROTATOR (TYPEWRITER)
+  // 5. DYNAMIC TERMINAL ROLE ROTATOR (TYPEWRITER)
   // ==========================================================================
   function initTypewriter() {
     const roleEl = document.getElementById('typed-role');
@@ -494,15 +640,13 @@
       setTimeout(type, typingSpeed);
     }
 
-    // Start with pre-filled first text after 1s
-    setTimeout(type, 1500);
+    setTimeout(type, 1200);
   }
 
   // ==========================================================================
-  // 5. SCROLL REVEAL & NAVIGATION ACTIVE STATE
+  // 6. SCROLL REVEAL & NAVIGATION ACTIVE STATE
   // ==========================================================================
   function initScrollRevealAndNav() {
-    // Intersection Observer for Smooth Reveal Animations
     const revealElements = document.querySelectorAll('[data-reveal]');
     if ('IntersectionObserver' in window && revealElements.length) {
       const observer = new IntersectionObserver((entries) => {
@@ -529,7 +673,6 @@
         navToggle.setAttribute('aria-expanded', isOpen);
       });
 
-      // Close nav on click outside or link click
       document.querySelectorAll('#nav-list a').forEach(link => {
         link.addEventListener('click', () => {
           navList.classList.remove('open');
@@ -565,11 +708,12 @@
   }
 
   // ==========================================================================
-  // 6. INITIALIZATION DISPATCHER
+  // 7. INITIALIZATION DISPATCHER
   // ==========================================================================
   document.addEventListener('DOMContentLoaded', () => {
     init3DScene();
     init3DTiltCards();
+    initTelemetryCounters();
     initCustomCursor();
     initTypewriter();
     initScrollRevealAndNav();

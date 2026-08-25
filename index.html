@@ -70,6 +70,8 @@
 
     <!-- Hero Section -->
     <section class="hero-section" id="hero">
+      <div class="hero-backdrop-glow" aria-hidden="true"></div>
+      
       <div class="hero-tag" data-reveal>
         <span class="tag-prefix">sys.status:</span>
         <span>OPEN TO HIGH-IMPACT AI/ML ROLES | C-DAC CHENNAI</span>
@@ -93,28 +95,69 @@
 
       <!-- Live Computational Telemetry Metrics -->
       <div class="hero-telemetry-grid" data-reveal>
-        <div class="telemetry-card">
-          <div class="telemetry-val cyan">0.92<span class="telemetry-unit">Recall</span></div>
-          <div class="telemetry-label">14 Pulmonary Pathologies</div>
-          <div class="telemetry-sub">XrayCAD Clinical Diagnostic AI</div>
+        <div class="telemetry-card tilt-card">
+          <div class="tilt-inner">
+            <div class="telemetry-hud-header">
+              <span class="hud-label">[SYS.METRIC // 01]</span>
+              <span class="hud-beacon cyan-pulse"></span>
+            </div>
+            <div class="telemetry-val cyan">
+              <span class="counter-num" data-counter-target="0.92" data-counter-decimals="2">0.92</span>
+              <span class="telemetry-unit">Recall</span>
+            </div>
+            <div class="telemetry-label">14 Pulmonary Pathologies</div>
+            <div class="telemetry-sub">XrayCAD Clinical Diagnostic AI</div>
+          </div>
+          <div class="tilt-glare"></div>
         </div>
 
-        <div class="telemetry-card">
-          <div class="telemetry-val emerald">Top 196<span class="telemetry-unit">Global</span></div>
-          <div class="telemetry-label">Gates Foundation Catalog</div>
-          <div class="telemetry-sub">India Innovation Summit TB 2025</div>
+        <div class="telemetry-card tilt-card">
+          <div class="tilt-inner">
+            <div class="telemetry-hud-header">
+              <span class="hud-label">[SYS.METRIC // 02]</span>
+              <span class="hud-beacon emerald-pulse"></span>
+            </div>
+            <div class="telemetry-val emerald">
+              <span class="telemetry-prefix">Top </span>
+              <span class="counter-num" data-counter-target="196" data-counter-decimals="0">196</span>
+              <span class="telemetry-unit">Global</span>
+            </div>
+            <div class="telemetry-label">Gates Foundation Catalog</div>
+            <div class="telemetry-sub">India Innovation Summit TB 2025</div>
+          </div>
+          <div class="tilt-glare"></div>
         </div>
 
-        <div class="telemetry-card">
-          <div class="telemetry-val violet">100<span class="telemetry-unit">Pts/Day</span></div>
-          <div class="telemetry-label">NHM Screening Ambulance</div>
-          <div class="telemetry-sub">2x RTX Quadro 5000 Edge Pilot</div>
+        <div class="telemetry-card tilt-card">
+          <div class="tilt-inner">
+            <div class="telemetry-hud-header">
+              <span class="hud-label">[SYS.METRIC // 03]</span>
+              <span class="hud-beacon violet-pulse"></span>
+            </div>
+            <div class="telemetry-val violet">
+              <span class="counter-num" data-counter-target="100" data-counter-decimals="0">100</span>
+              <span class="telemetry-unit">Pts/Day</span>
+            </div>
+            <div class="telemetry-label">NHM Screening Ambulance</div>
+            <div class="telemetry-sub">2x RTX Quadro 5000 Edge Pilot</div>
+          </div>
+          <div class="tilt-glare"></div>
         </div>
 
-        <div class="telemetry-card">
-          <div class="telemetry-val amber">882<span class="telemetry-unit">ms</span></div>
-          <div class="telemetry-label">Production RAG Latency</div>
-          <div class="telemetry-sub">Port Authority APACS & 0% Out-of-Scope</div>
+        <div class="telemetry-card tilt-card">
+          <div class="tilt-inner">
+            <div class="telemetry-hud-header">
+              <span class="hud-label">[SYS.METRIC // 04]</span>
+              <span class="hud-beacon amber-pulse"></span>
+            </div>
+            <div class="telemetry-val amber">
+              <span class="counter-num" data-counter-target="882" data-counter-decimals="0">882</span>
+              <span class="telemetry-unit">ms</span>
+            </div>
+            <div class="telemetry-label">Production RAG Latency</div>
+            <div class="telemetry-sub">Port Authority APACS & 0% Out-of-Scope</div>
+          </div>
+          <div class="tilt-glare"></div>
         </div>
       </div>
 
@@ -219,18 +262,18 @@
             <!-- XrayCAD Subproject -->
             <div class="subproject-card tilt-card">
               <div class="tilt-inner">
-                <div class="subproject-title-row">
+                <div class="subproject-title-row layer-depth-1">
                   <div class="subproject-title">XrayCAD – Healthcare AI Diagnostic System</div>
                   <span class="subproject-tag">Computer Vision</span>
                 </div>
-                <ul class="subproject-points">
+                <ul class="subproject-points layer-depth-0">
                   <li>Engineered and deployed <strong>XrayCAD</strong>, a multi-label chest X-ray classification system covering <strong>14 pulmonary pathologies</strong>, achieving <strong>0.92 recall</strong> and <strong>0.86 specificity</strong> on held-out clinical test data.</li>
                   <li>Implemented anatomical zone segmentation (CXAS model) across six lung regions with lung masking; integrated <strong>Grad-CAM explainability</strong> for clinical decision support, applying class-specific thresholding to minimize false negatives for high-risk pathologies.</li>
                   <li>Iterated model architectures through active clinician feedback cycles with radiologists from <strong>ICMR–NIRT</strong>.</li>
                 </ul>
 
                 <!-- Embedded Interactive Grad-CAM Heatmap Simulator -->
-                <div class="card-widget-box">
+                <div class="card-widget-box layer-depth-2">
                   <div class="widget-header">
                     <span>Grad-CAM Spatial Diagnostic</span>
                     <span class="widget-badge">Zone 03 / Active Heat</span>
@@ -260,17 +303,17 @@
             <!-- NHM Multi-GPU Serving Subproject -->
             <div class="subproject-card tilt-card">
               <div class="tilt-inner">
-                <div class="subproject-title-row">
+                <div class="subproject-title-row layer-depth-1">
                   <div class="subproject-title">Multi-GPU Ambulance Inference Pilot</div>
                   <span class="subproject-tag">Scalable MLOps</span>
                 </div>
-                <ul class="subproject-points">
+                <ul class="subproject-points layer-depth-0">
                   <li>Architected and deployed a Flask-based model serving system on <strong>2x NVIDIA RTX Quadro 5000 GPUs</strong>.</li>
                   <li>Piloted in a <strong>National Health Mission (NHM) Chennai TB screening ambulance</strong>, actively screening <strong>100 patients/day</strong> during rural deployments.</li>
                   <li>Built asynchronous batching, result caching, and high-throughput inference endpoints enabling real-world clinical evaluation at scale.</li>
                 </ul>
 
-                <div class="card-widget-box">
+                <div class="card-widget-box layer-depth-2">
                   <div class="widget-header">
                     <span>Edge Multi-GPU Telemetry</span>
                     <span class="widget-badge" style="color:#38bdf8; background:rgba(56,189,248,0.12);">2x Quadro 5000</span>
@@ -287,16 +330,16 @@
             <!-- Chennai Port Authority APACS Production RAG -->
             <div class="subproject-card tilt-card">
               <div class="tilt-inner">
-                <div class="subproject-title-row">
+                <div class="subproject-title-row layer-depth-1">
                   <div class="subproject-title">Port Authority APACS Production RAG</div>
                   <span class="subproject-tag">GenAI / RAG</span>
                 </div>
-                <ul class="subproject-points">
+                <ul class="subproject-points layer-depth-0">
                   <li>Designed and deployed a local production RAG system for <strong>Chennai Port Authority’s APACS</strong> using FAISS vector database, BGE-Base embeddings, Cross-Encoder reranking, and local <strong>Qwen-7B / Ollama</strong>.</li>
                   <li>Integrated context compression and multi-layer guardrails (prompt injection detection, PII redaction, intent filtering), achieving <strong>0% wrongly answered out-of-scope queries</strong>.</li>
                 </ul>
 
-                <div class="card-widget-box">
+                <div class="card-widget-box layer-depth-2">
                   <div class="widget-header">
                     <span>Production Guardrails</span>
                     <span class="widget-badge">0% Out-of-Scope Error</span>
@@ -312,16 +355,16 @@
             <!-- LLM-as-a-Judge Evaluation Suite -->
             <div class="subproject-card tilt-card">
               <div class="tilt-inner">
-                <div class="subproject-title-row">
+                <div class="subproject-title-row layer-depth-1">
                   <div class="subproject-title">LLM-as-a-Judge Evaluation Harness</div>
                   <span class="subproject-tag">Model Evaluation</span>
                 </div>
-                <ul class="subproject-points">
+                <ul class="subproject-points layer-depth-0">
                   <li>Architected an automated, non-self-grading <strong>LLM-as-a-Judge evaluation harness</strong> over a <strong>244-case QA suite</strong>.</li>
                   <li>Achieved <strong>85.7% end-to-end pass rate</strong>, <strong>82.1% retrieval recall</strong>, <strong>4.43/5 groundedness score</strong>, and <strong>882 ms median latency</strong> in production evaluation.</li>
                 </ul>
 
-                <div class="card-widget-box">
+                <div class="card-widget-box layer-depth-2">
                   <div class="widget-header">
                     <span>Evaluation Metrics (244 Cases)</span>
                     <span class="widget-badge" style="color:#c084fc; background:rgba(192,132,252,0.12);">Pass: 85.7%</span>
@@ -338,11 +381,11 @@
             <!-- Puducherry School ERP -->
             <div class="subproject-card tilt-card">
               <div class="tilt-inner">
-                <div class="subproject-title-row">
+                <div class="subproject-title-row layer-depth-1">
                   <div class="subproject-title">Puducherry Government School ERP</div>
                   <span class="subproject-tag">Enterprise Data</span>
                 </div>
-                <ul class="subproject-points">
+                <ul class="subproject-points layer-depth-0">
                   <li>Contributed to an Odoo 16 + PostgreSQL ERP system deployed across <strong>750+ government schools</strong> (Pudupallikalvi).</li>
                   <li>Built automated Python–SQL pipelines for student attendance and academic analytics, reducing manual reporting time by <strong>80%</strong>.</li>
                 </ul>
@@ -353,11 +396,11 @@
             <!-- Clinical Research LLM Agent -->
             <div class="subproject-card tilt-card">
               <div class="tilt-inner">
-                <div class="subproject-title-row">
+                <div class="subproject-title-row layer-depth-1">
                   <div class="subproject-title">Clinical Research LLM Agent</div>
                   <span class="subproject-tag">Agentic AI</span>
                 </div>
-                <ul class="subproject-points">
+                <ul class="subproject-points layer-depth-0">
                   <li>Built an LLM-powered medical research assistant integrating PubMed API, FAISS semantic retrieval, and tool-augmented reasoning.</li>
                   <li>Designed multi-step agentic pipeline (search → index → retrieve → generate) using LangGraph and local LLaMA 3.2 with strict hallucination control (temperature=0).</li>
                 </ul>
@@ -383,20 +426,20 @@
         <!-- Project 1: Grounded Resume Optimization Agent -->
         <div class="project-card-3d tilt-card" data-reveal>
           <div class="tilt-inner">
-            <div class="project-meta-top">
+            <div class="project-meta-top layer-depth-1">
               <span class="project-year">2026</span>
               <span class="project-category">⚡ Agentic LLM & Ranking</span>
             </div>
-            <h3 class="project-name">Grounded Resume Optimization Agent</h3>
+            <h3 class="project-name layer-depth-2">Grounded Resume Optimization Agent</h3>
             
-            <ul class="project-desc-list">
+            <ul class="project-desc-list layer-depth-0">
               <li>Architected an agentic, 2-stage LLM pipeline (Gemini 2.5 Pro + FAISS) with an autonomous <strong>3-attempt self-correcting regeneration loop</strong>, reducing hallucination rate to <strong>&lt;5%</strong> on a curated validation set.</li>
               <li>Trained a 4-feature sklearn MLP hallucination detector (cosine similarity, L2 drift, source asymmetry, sentence coverage) achieving <strong>≥0.85 precision</strong>; improved overall faithfulness score from <strong>0.509 → 0.923</strong>.</li>
               <li>Engineered PyTorch pairwise contrastive ranker (MarginRankingLoss + MC Dropout + Platt calibration); evaluated via NDCG@3, MRR, MAP@3 on 8-query benchmark with same-domain hard negatives and gradient × input attribution.</li>
             </ul>
 
             <!-- Interactive Agentic Stepper Visualizer -->
-            <div class="agent-loop-widget">
+            <div class="agent-loop-widget layer-depth-2">
               <div style="display:flex; justify-content:space-between; align-items:center; color:#c084fc; font-weight:600;">
                 <span>Agentic Self-Correction Loop</span>
                 <span>Faithfulness: 0.923</span>
@@ -412,7 +455,7 @@
               </div>
             </div>
 
-            <div class="project-tech-stack">
+            <div class="project-tech-stack layer-depth-1">
               <span class="tech-badge">Python</span>
               <span class="tech-badge">PyTorch</span>
               <span class="tech-badge">FAISS</span>
@@ -427,20 +470,20 @@
         <!-- Project 2: Hierarchical RAG System -->
         <div class="project-card-3d tilt-card" data-reveal>
           <div class="tilt-inner">
-            <div class="project-meta-top">
+            <div class="project-meta-top layer-depth-1">
               <span class="project-year">March 2026</span>
               <span class="project-category">⚡ Retrieval-Augmented Generation</span>
             </div>
-            <h3 class="project-name">Hierarchical RAG System for PDF Question Answering</h3>
+            <h3 class="project-name layer-depth-2">Hierarchical RAG System for PDF Question Answering</h3>
             
-            <ul class="project-desc-list">
+            <ul class="project-desc-list layer-depth-0">
               <li>Built a scalable multi-document QA system over <strong>100+ PDF files</strong> using a two-stage hierarchical retrieval pipeline (document-level + chunk-level), reducing irrelevant context retrieval by <strong>~40%</strong>.</li>
               <li>Generated dense vector embeddings using BAAI/bge-large-en and indexed <strong>10,000+ text chunks</strong> in FAISS, achieving sub-second query latency.</li>
               <li>Reduced hallucinations through metadata-based source filtering and prompt engineering constraints.</li>
               <li>Designed coarse-to-fine retrieval: document-level FAISS pre-filters relevant PDFs before chunk-level semantic search.</li>
             </ul>
 
-            <div class="project-tech-stack">
+            <div class="project-tech-stack layer-depth-1">
               <span class="tech-badge">Python</span>
               <span class="tech-badge">FAISS</span>
               <span class="tech-badge">BGE-Large</span>
@@ -454,19 +497,19 @@
         <!-- Project 3: Mitigation of Backdoor Poisoning Attacks -->
         <div class="project-card-3d tilt-card" data-reveal>
           <div class="tilt-inner">
-            <div class="project-meta-top">
+            <div class="project-meta-top layer-depth-1">
               <span class="project-year">January 2024</span>
               <span class="project-category">🛡️ ML Security & Computer Vision</span>
             </div>
-            <h3 class="project-name">Mitigation of Backdoor Poisoning Attacks in DNNs</h3>
+            <h3 class="project-name layer-depth-2">Mitigation of Backdoor Poisoning Attacks in DNNs</h3>
             
-            <ul class="project-desc-list">
+            <ul class="project-desc-list layer-depth-0">
               <li>Implemented a backdoor attack mitigation system using <strong>DBSCAN clustering</strong> to identify poisoned samples with patch triggers in the CIFAR-10 dataset.</li>
               <li>Applied spatial heatmaps to localize trigger positions and used inpainting to neutralize detected triggers.</li>
               <li>Re-trained the model to reduce attack success rate by <strong>90%</strong>. Research formed the basis of the published survey paper at <strong>IEEE CVMI 2025</strong>.</li>
             </ul>
 
-            <div class="project-tech-stack">
+            <div class="project-tech-stack layer-depth-1">
               <span class="tech-badge">PyTorch</span>
               <span class="tech-badge">Scikit-learn</span>
               <span class="tech-badge">CIFAR-10</span>
@@ -480,18 +523,18 @@
         <!-- Project 4: Financial Consumer Complaints Analytics -->
         <div class="project-card-3d tilt-card" data-reveal>
           <div class="tilt-inner">
-            <div class="project-meta-top">
+            <div class="project-meta-top layer-depth-1">
               <span class="project-year">Data Analytics</span>
               <span class="project-category">📊 Big Data & Visualization</span>
             </div>
-            <h3 class="project-name">Financial Consumer Complaints Analytics</h3>
+            <h3 class="project-name layer-depth-2">Financial Consumer Complaints Analytics</h3>
             
-            <ul class="project-desc-list">
+            <ul class="project-desc-list layer-depth-0">
               <li>Analyzed <strong>75,513 complaints</strong> using Tableau and Python; identified 98.05% timely resolution rate across institutions.</li>
               <li>Built interactive hex-map dashboards for state-wise geographical insights to support policy evaluation.</li>
             </ul>
 
-            <div class="project-tech-stack">
+            <div class="project-tech-stack layer-depth-1">
               <span class="tech-badge">Tableau</span>
               <span class="tech-badge">SQL</span>
               <span class="tech-badge">Python</span>
@@ -517,28 +560,28 @@
         <!-- Publication 1: IEEE CVMI 2025 -->
         <div class="publication-card tilt-card" data-reveal>
           <div class="tilt-inner">
-            <div class="pub-badge-row">
+            <div class="pub-badge-row layer-depth-1">
               <span class="pub-venue-badge ieee">IEEE CVMI 2025 · NIT Rourkela</span>
               <span class="project-year">Computer Vision Security</span>
             </div>
             
-            <h3 class="pub-title">Data Poisoning Attacks and Defenses in ML: A Survey with Focus on Computer Vision</h3>
+            <h3 class="pub-title layer-depth-2">Data Poisoning Attacks and Defenses in ML: A Survey with Focus on Computer Vision</h3>
             
-            <div class="pub-authors">
+            <div class="pub-authors layer-depth-1">
               <strong>Bassam Nazer</strong>, Poornima Savadattimath, Sushma Kumari
             </div>
 
-            <p class="pub-abstract">
+            <p class="pub-abstract layer-depth-0">
               A comprehensive survey and taxonomy analyzing targeted label-flip and backdoor trigger attacks in computer vision systems. Reviews state-of-the-art detection, localization, and mitigation strategies across the adversarial machine learning landscape.
             </p>
 
-            <div class="pub-highlights">
+            <div class="pub-highlights layer-depth-1">
               <div class="pub-highlight-item">Label-flip & Backdoor Trigger Taxonomy</div>
               <div class="pub-highlight-item">Spatial Defense & Inpainting Benchmarks</div>
               <div class="pub-highlight-item">Adversarial ML Vulnerability Analysis</div>
             </div>
 
-            <div class="pub-footer-links">
+            <div class="pub-footer-links layer-depth-1">
               <a href="https://doi.org/10.1109/CVMI66673.2025.11337510" target="_blank" rel="noopener noreferrer" class="doi-link">
                 <span>DOI: 10.1109/CVMI66673.2025.11337510</span>
                 <span>↗</span>
@@ -551,22 +594,22 @@
         <!-- Publication 2: CML 2026 Springer -->
         <div class="publication-card tilt-card" data-reveal>
           <div class="tilt-inner">
-            <div class="pub-badge-row">
+            <div class="pub-badge-row layer-depth-1">
               <span class="pub-venue-badge">CML 2026 · Springer LNNS (Scopus Indexed)</span>
               <span class="project-year">Quantum AI / Neuroimaging</span>
             </div>
             
-            <h3 class="pub-title">Q3D-MRI-Net: A Hybrid Quantum-Classical 3D Network for MRI-Based Alzheimer’s Disease Detection</h3>
+            <h3 class="pub-title layer-depth-2">Q3D-MRI-Net: A Hybrid Quantum-Classical 3D Network for MRI-Based Alzheimer’s Disease Detection</h3>
             
-            <div class="pub-authors">
+            <div class="pub-authors layer-depth-1">
               <strong>Bassam Nazer</strong>, Harikrishnan V S, P Malliga, D Ethirajan
             </div>
 
-            <p class="pub-abstract">
+            <p class="pub-abstract layer-depth-0">
               Proposed a hybrid quantum-classical 3D CNN integrating Parameterized Quantum Circuits (EstimatorQNN) with a volumetric deep learning backbone for MRI-based Alzheimer's classification. Conducted strict subject-level train/test evaluation to eliminate data leakage and performed systematic skull-stripping and qubit scalability analysis.
             </p>
 
-            <div class="pub-highlights">
+            <div class="pub-highlights layer-depth-1">
               <div class="pub-highlight-item">Hybrid 3D CNN + PQC (2-qubit & 3-qubit)</div>
               <div class="pub-highlight-item">Strict Subject-Level Split (Zero Leakage)</div>
               <div class="pub-highlight-item">Skull-Stripped vs Raw Volumetric MRI Robustness</div>
@@ -591,15 +634,15 @@
         <!-- Award 1: Gates Foundation / TB Summit -->
         <div class="award-card tilt-card" data-reveal>
           <div class="tilt-inner">
-            <div class="award-badge-top">
+            <div class="award-badge-top layer-depth-1">
               <div class="award-icon-box">🏆</div>
               <span class="award-year">2025</span>
             </div>
-            <h3 class="award-title">India Innovation Summit for TB Elimination</h3>
-            <p class="award-desc">
+            <h3 class="award-title layer-depth-2">India Innovation Summit for TB Elimination</h3>
+            <p class="award-desc layer-depth-0">
               <strong>XrayCAD</strong> was selected among <strong>196 global TB innovations</strong> catalogued by the <strong>Gates Foundation</strong> & International Union Against Tuberculosis and Lung Disease for its breakthrough multi-label chest pathology screening capabilities.
             </p>
-            <a href="https://atlasoftbinnovations.in" target="_blank" rel="noopener noreferrer" class="award-link">
+            <a href="https://atlasoftbinnovations.in" target="_blank" rel="noopener noreferrer" class="award-link layer-depth-1">
               <span>View Atlas of TB Innovations (atlasoftbinnovations.in)</span>
               <span>↗</span>
             </a>
@@ -610,12 +653,12 @@
         <!-- Award 2: ICMR-NIRT Conference -->
         <div class="award-card tilt-card" data-reveal>
           <div class="tilt-inner">
-            <div class="award-badge-top">
+            <div class="award-badge-top layer-depth-1">
               <div class="award-icon-box">🎖️</div>
               <span class="award-year">2025</span>
             </div>
-            <h3 class="award-title">ICMR–NIRT TB Research Dissemination Conference</h3>
-            <p class="award-desc">
+            <h3 class="award-title layer-depth-2">ICMR–NIRT TB Research Dissemination Conference</h3>
+            <p class="award-desc layer-depth-0">
               Received an award for <strong>AI-Assisted TB Detection</strong> from <strong>Dr. Senthil Kumar, IAS</strong>, Principal Secretary, Health & Family Welfare, Government of Tamil Nadu, recognizing research efforts to protect lungs from TB in collaboration with ICMR–NIRT.
             </p>
           </div>
@@ -673,11 +716,11 @@
         <!-- Category 1: Languages -->
         <div class="skill-category-card tilt-card" data-reveal>
           <div class="tilt-inner">
-            <div class="skill-cat-header">
+            <div class="skill-cat-header layer-depth-1">
               <span class="skill-cat-icon">⌨️</span>
               <h3 class="skill-cat-title">Languages</h3>
             </div>
-            <div class="skill-tags-cloud">
+            <div class="skill-tags-cloud layer-depth-0">
               <span class="skill-tag highlight">Python</span>
               <span class="skill-tag highlight">C</span>
               <span class="skill-tag highlight">SQL</span>
@@ -689,11 +732,11 @@
         <!-- Category 2: ML & Deep Learning -->
         <div class="skill-category-card tilt-card" data-reveal>
           <div class="tilt-inner">
-            <div class="skill-cat-header">
+            <div class="skill-cat-header layer-depth-1">
               <span class="skill-cat-icon">🧠</span>
               <h3 class="skill-cat-title">ML & Deep Learning</h3>
             </div>
-            <div class="skill-tags-cloud">
+            <div class="skill-tags-cloud layer-depth-0">
               <span class="skill-tag highlight">PyTorch</span>
               <span class="skill-tag highlight">TensorFlow</span>
               <span class="skill-tag">Scikit-learn</span>
@@ -710,11 +753,11 @@
         <!-- Category 3: LLMs & RAG -->
         <div class="skill-category-card tilt-card" data-reveal>
           <div class="tilt-inner">
-            <div class="skill-cat-header">
+            <div class="skill-cat-header layer-depth-1">
               <span class="skill-cat-icon">⚡</span>
               <h3 class="skill-cat-title">LLMs, Agents & RAG</h3>
             </div>
-            <div class="skill-tags-cloud">
+            <div class="skill-tags-cloud layer-depth-0">
               <span class="skill-tag highlight">HuggingFace</span>
               <span class="skill-tag highlight">FAISS Vector DB</span>
               <span class="skill-tag">LangChain</span>
@@ -732,11 +775,11 @@
         <!-- Category 4: ML & Analytics -->
         <div class="skill-category-card tilt-card" data-reveal>
           <div class="tilt-inner">
-            <div class="skill-cat-header">
+            <div class="skill-cat-header layer-depth-1">
               <span class="skill-cat-icon">📈</span>
               <h3 class="skill-cat-title">ML & Analytics</h3>
             </div>
-            <div class="skill-tags-cloud">
+            <div class="skill-tags-cloud layer-depth-0">
               <span class="skill-tag">Classification</span>
               <span class="skill-tag">Clustering (DBSCAN)</span>
               <span class="skill-tag">PCA</span>
@@ -753,11 +796,11 @@
         <!-- Category 5: Deployment & Infrastructure -->
         <div class="skill-category-card tilt-card" data-reveal>
           <div class="tilt-inner">
-            <div class="skill-cat-header">
+            <div class="skill-cat-header layer-depth-1">
               <span class="skill-cat-icon">🚀</span>
               <h3 class="skill-cat-title">Deployment & Infrastructure</h3>
             </div>
-            <div class="skill-tags-cloud">
+            <div class="skill-tags-cloud layer-depth-0">
               <span class="skill-tag highlight">Flask REST APIs</span>
               <span class="skill-tag highlight">Docker</span>
               <span class="skill-tag highlight">Multi-GPU Inference (Quadro)</span>
@@ -772,11 +815,11 @@
         <!-- Category 6: Data & Storage -->
         <div class="skill-category-card tilt-card" data-reveal>
           <div class="tilt-inner">
-            <div class="skill-cat-header">
+            <div class="skill-cat-header layer-depth-1">
               <span class="skill-cat-icon">🗄️</span>
               <h3 class="skill-cat-title">Data & Storage</h3>
             </div>
-            <div class="skill-tags-cloud">
+            <div class="skill-tags-cloud layer-depth-0">
               <span class="skill-tag highlight">Pandas</span>
               <span class="skill-tag highlight">NumPy</span>
               <span class="skill-tag highlight">PostgreSQL</span>

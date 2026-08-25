@@ -528,7 +528,8 @@ section.hero-section {
   margin-bottom: 0.35rem;
   display: flex;
   align-items: baseline;
-  gap: 0.35rem;
+  flex-wrap: wrap;
+  gap: 0.4rem;
 }
 
 .telemetry-val.cyan { color: var(--accent-cyan-bright); }
@@ -536,15 +537,27 @@ section.hero-section {
 .telemetry-val.violet { color: var(--accent-violet); }
 .telemetry-val.amber { color: var(--accent-amber); }
 
-.telemetry-prefix {
-  font-size: 1.1rem;
-  font-weight: 600;
+.metric-number,
+.counter-num {
+  font-size: 1.85rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
 }
 
+.metric-prefix,
+.telemetry-prefix {
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-right: 0.15rem;
+}
+
+.metric-unit,
 .telemetry-unit {
-  font-size: 0.9rem;
+  font-size: 0.92rem;
   font-weight: 500;
   color: var(--text-muted);
+  margin-left: 0.15rem;
 }
 
 .telemetry-label {
